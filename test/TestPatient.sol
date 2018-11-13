@@ -17,7 +17,7 @@ contract TestPatient {
 
         uint spot = max.addPrescription(patient_id, drug_name);
         
-        Assert.equal(spot, 3, "Expected this to be the 1st");
+        Assert.equal(spot, 0, "Expected this to be the 1st");
 
         string memory drug;
         uint time;

@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 contract Patient {
     Info[] drug_chain;
     uint[] users;
-
+    
     struct Info {
         string drug_name;
         uint time_added;
@@ -28,5 +28,4 @@ contract Patient {
         time_added = drug_chain[index].time_added;
     }
 	
-
 }
