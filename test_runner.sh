@@ -6,5 +6,10 @@ cd quorum-maker
 echo "Move into quroum-maker"
 ls -la
 cd TestNetwork 
-sudo docker-compose up -d 
+sudo docker-compose up -d
+# Open the nodes 
+
+cd ../..
+cd PharmaChain/
+ 
 exit 0
