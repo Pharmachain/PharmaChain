@@ -3,6 +3,7 @@ sudo:
 
 before_script: 
   - ls
+  - chmod +x test_runner.sh
 
 script: 
   - sudo ./test_runner.sh
