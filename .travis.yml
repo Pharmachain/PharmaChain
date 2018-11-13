@@ -1,5 +1,8 @@
 sudo:
   - yes
 
+before_script: 
+  - cd ./PharmaChain
+
 script: 
   - sudo ./test_runner.sh
