@@ -2,6 +2,7 @@ sudo:
   - yes
 
 before_script: 
+  - ls
   - cd PharmaChain
 
 script: 
