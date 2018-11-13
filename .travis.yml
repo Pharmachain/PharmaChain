@@ -1,2 +1,5 @@
+sudo:
+  - yes
+
 script: 
-  - ./test_runner.sh
+  - sudo ./test_runner.sh
