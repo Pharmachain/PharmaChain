@@ -1,3 +1,5 @@
+sudo apt-get update
+sudo apt-get install ethereum
 
 cd ..
 sudo git clone https://github.com/Pharmachain/quorum-maker
