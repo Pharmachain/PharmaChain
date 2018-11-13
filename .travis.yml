@@ -3,7 +3,6 @@ sudo:
 
 before_script: 
   - ls
-  - cd PharmaChain
 
 script: 
   - sudo ./test_runner.sh
