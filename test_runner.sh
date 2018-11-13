@@ -1,6 +1,6 @@
 
 cd ..
-git clone https://github.com/synechron-finlabs/quorum-maker
-cd quorum-maker
-./setup.sh
+sudo git clone https://github.com/Pharmachain/quorum-maker
+cd quorum-maker/TestNetwork
+sudo docker-compose up -d 
 exit 0
