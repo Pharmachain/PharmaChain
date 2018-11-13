@@ -2,7 +2,7 @@ sudo:
   - yes
 
 before_script: 
-  - cd ./PharmaChain
+  - cd PharmaChain
 
 script: 
   - sudo ./test_runner.sh
