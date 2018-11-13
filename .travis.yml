@@ -1,2 +1,2 @@
 script: 
-	- ./test_runner.sh
+  - ./test_runner.sh
