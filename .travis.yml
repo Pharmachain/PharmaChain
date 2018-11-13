@@ -2,7 +2,7 @@ sudo:
   - yes
 
 before_script: 
-  - ls
+  - npm i -g npm@6.4.1
   - chmod +x test_runner.sh
 
 script: 

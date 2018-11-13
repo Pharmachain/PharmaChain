@@ -16,5 +16,6 @@ sudo docker-compose up -d
 cd ../..
 cd PharmaChain/
 ls -la
+sudo npm install
 truffle test 
 exit $?
