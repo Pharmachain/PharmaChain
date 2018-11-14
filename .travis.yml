@@ -1,7 +1,8 @@
 sudo:
   - yes
 
-before_script: 
+before_script:
+  - sudo add-apt-repository -y ppa:ethereum/ethereum 
   - npm i -g npm@6.4.1
   - chmod +x test_runner.sh
 
