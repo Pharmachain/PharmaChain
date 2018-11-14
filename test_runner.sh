@@ -1,4 +1,4 @@
-apt-get-repository -y ppa:ethereum/ethereum
+#!/bin/bash
 sudo apt-get update
 sudo apt-get install ethereum
 
@@ -11,14 +11,15 @@ cd TestNetwork
 
 # Turn on the Quorum Network  
 sudo docker-compose up -d
-
+ls -la
 # Open the nodes up to be used
 ./modular.sh
 # Open the nodes 
 
 cd ../..
 cd PharmaChain/
-ls -la
+
+
 npm install
 truffle test 
 exit $?
