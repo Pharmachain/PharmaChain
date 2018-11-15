@@ -11,7 +11,10 @@ cd TestNetwork
 
 # Turn on the Quorum Network  
 sudo docker-compose up -d
-ls -la
+ls /node1/node/qdata
+sleep 2m
+
+ls /node1/node/qdata
 # Open the nodes up to be used
 ./modular.sh
 # Open the nodes 
