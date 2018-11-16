@@ -1,4 +1,4 @@
-pragma solidity ^0.4.22;
+pragma experimental ABIEncoderV2;
 
 import "./PrescriptionAccessControl.sol";
 
@@ -6,9 +6,7 @@ contract PrescriptionBase is PrescriptionAccessControl{
 
     /*
     Holds all of the data for all prescription orders, current and cancelled. 
-    */
-    Prescription[] drugChain;
-
+    *
 
     /*
     The defined 'roles' of the ecosystem.
@@ -41,23 +39,19 @@ contract PrescriptionBase is PrescriptionAccessControl{
         string drugQuantity; 
         // The dates in which the drug was fulfilled
         // Will have to encode this on the frontend (likely just unix time) for all dates
-        uint64[] fullfillmentDates;
+        // Arrays must be static in order to pass them around. So, this is constrained to 16 value, at the moment.
+        uint64[16] fullfillmentDates;
         // The date the prescription was prescribed
         uint64 dateWritten; 
         // The amount of days that the prescription is valid for pickup. 
         uint16 daysValid;
         // The amount of fills that the drug is allowed.
-        uint8[] refillsLeft;
+        uint8 refillsLeft;
         // Has the prescription request been cancelled?
         bool isCancelled; 
         // The date of the cancellation of the prescription request
         uint64 cancelDate;
     }
-
-    /*
-    All changes to the drugChain will be done here.
-    */
-
-
+    
 }
 

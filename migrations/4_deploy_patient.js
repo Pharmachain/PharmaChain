@@ -1,5 +1,6 @@
-Patient = artifacts.require("Patient");
-
+PrescriptionData = artifacts.require("PrescriptionData");
+PrescriptionBase = artifacts.require("PrescriptionBase");
 module.exports = function(deployer){
-	deployer.deploy(Patient);
+    deployer.deploy(PrescriptionBase, {gas: 5000000});
+    deployer.deploy(PrescriptionData, {gas: 5000000});
 }
