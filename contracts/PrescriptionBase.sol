@@ -2,7 +2,7 @@ pragma experimental ABIEncoderV2;
 
 import "./PrescriptionAccessControl.sol";
 
-contract PrescriptionBase is PrescriptionAccessControl{
+contract PrescriptionBase {
 
     /*
     Holds all of the data for all prescription orders, current and cancelled. 
@@ -11,22 +11,23 @@ contract PrescriptionBase is PrescriptionAccessControl{
     /*
     The defined 'roles' of the ecosystem.
     */
-    enum UserRoles {
+    enum Role {
         // Average user of the system
-        Patient,
+        PATIENT,
         // Doctors
-        Prescriber,
+        PRESCRIBER,
         // Pharmacies
-        Dispenser,
+        DISPENSOR,
         // Government oversight
-        Overseer,
+        OVERSEER,
         // Only role to add users to the system
-        Controller
+        CONTROLLER
     }
 
     struct Prescription {
 
         // The id associated with a user
+        // Should be an address
         uint256 patientID;
         // The id associated with a prescriber
         uint128 prescriberID; 

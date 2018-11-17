@@ -39,6 +39,7 @@ contract PrescriptionData is PrescriptionBase{
         isCancelled = patient.isCancelled;
         cancelDate = patient.cancelDate;
     }*/
+
     function getPrescription(uint chainIndex) public view returns (Prescription){
         Prescription memory p = drugChain[chainIndex];
         return p;
