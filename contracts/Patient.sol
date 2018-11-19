@@ -1,11 +1,9 @@
 pragma experimental ABIEncoderV2;
 
 import "./PrescriptionData.sol";
-import "./PrescriptionBase.sol";
+import "./PrescriptionAccessControl.sol";
 
-contract Patient is PrescriptionAccessControl{
-	
-    PrescriptionData pData;
+contract Patient is PrescriptionData, PrescriptionAccessControl{
 
     /*
     Gets the prescription for a patient user.
@@ -20,14 +18,16 @@ contract Patient is PrescriptionAccessControl{
         uint128 dispenserID,
         uint64 drugID,
         string memory drugQuantity, 
-        uint64[16] fullfillmentDates,
+        uint64[16] memory fullfillmentDates,
         uint64 dateWritten,  
         uint16 daysValid,
         uint8 refillsLeft,
         bool isCancelled, 
         uint64 cancelDate
     ){
-        PrescriptionBase.Prescription memory patient = pData.getPrescription(prescriptionIndex);
+        require(prescriptionIndex < drugChain.length, "Index greater than the length");
+
+        Prescription memory patient = drugChain[prescriptionIndex];
         // check if patientAccount is msg.sender, in the future TBI
 
         patientID = patient.patientID;
@@ -41,6 +41,11 @@ contract Patient is PrescriptionAccessControl{
         refillsLeft = patient.refillsLeft;
         isCancelled = patient.isCancelled;
         cancelDate = patient.cancelDate; 
+    }
+
+    function ac(uint p) public returns (uint) {
+        
+        return drugChain.length;
     }
     
 }

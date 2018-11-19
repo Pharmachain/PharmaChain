@@ -1,12 +1,10 @@
 pragma experimental ABIEncoderV2;
 
-import "./PrescriptionAccessControl.sol";
-
 contract PrescriptionBase {
 
     /*
     Holds all of the data for all prescription orders, current and cancelled. 
-    *
+    */
 
     /*
     The defined 'roles' of the ecosystem.

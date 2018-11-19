@@ -10,8 +10,7 @@ import "../contracts/Patient.sol";
 contract TestPatient is PrescriptionBase{
     
     Patient p = Patient(DeployedAddresses.Patient());
-    PrescriptionData pContract = PrescriptionData(DeployedAddresses.PrescriptionData());
-    
+
     uint64[16] fu; // cannot assign arrays as a constant. So, this var must be here.
     Prescription data = Prescription({
         patientID: 0,
@@ -30,8 +29,9 @@ contract TestPatient is PrescriptionBase{
 
     // Test the ability to add a prescription
     function testAdding() public {
-        uint index = pContract.addPrescription(data);
+        uint index = p.addPrescription(data);
         Assert.equal(0, index, "index return error");
+
         uint256 patientID;
         uint128 prescriberID;
         uint128 dispenserID;
@@ -41,6 +41,8 @@ contract TestPatient is PrescriptionBase{
         uint64 dateWritten;
         (patientID, prescriberID, dispenserID, drugID, drugQuantity, fullfillmentDates, dateWritten, , , , ) = p.getPatientPrescription(index);
 
-         // Assert.equal(patientID, data.patientID, "PatientID error....");
+        Assert.equal(uint(patientID), uint(data.patientID), "PatientID error....");
+        Assert.equal(uint(prescriberID), uint(data.prescriberID), "PrescriberID error....");
+        Assert.equal(string(drugQuantity), string(data.drugQuantity), "Drug quantity error....");
     }
 }

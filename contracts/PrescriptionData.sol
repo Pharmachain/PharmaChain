@@ -2,10 +2,11 @@ pragma experimental ABIEncoderV2;
 
 import "./PrescriptionBase.sol";
 
-contract PrescriptionData is PrescriptionBase{
+
+contract PrescriptionData is PrescriptionBase {
 
     
-    Prescription[] drugChain;
+    Prescription[] public drugChain;
 
     /*
     Get a single prescription.
