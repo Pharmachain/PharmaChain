@@ -17,7 +17,7 @@ contract TestPrescription is PrescriptionBase{
         dispenserID: 2,
         drugID : 34,
         drugQuantity: "300mg",
-        fullfillmentDates: fu,
+        fulfillmentDates: fu,
         dateWritten: 1542357074,
         daysValid: 200,
         refillsLeft: 8,
@@ -28,10 +28,21 @@ contract TestPrescription is PrescriptionBase{
 
     // Test the ability to add a prescription
     function testAdding() public {
-        uint index = pContract.addPrescription(data);
+        uint index = pContract.addPrescription(data.patientID, data.prescriberID, data.dispenserID, data.drugID,
+        data.drugQuantity, data.fulfillmentDates, data.dateWritten, data.daysValid, data.refillsLeft,
+        data.isCancelled, data.cancelDate);
         Assert.equal(0, index, "index return error");
 
-        Prescription memory pharm = pContract.getPrescription(index);
-        Assert.equal(pharm.patientID, data.patientID, "PatientID error....");
+        uint256 patientID;
+        uint128 prescriberID;
+        uint128 dispenserID;
+        uint64 drugID;
+        string memory drugQuantity;
+        uint64[16] memory fulfillmentDates;
+        uint64 dateWritten;
+
+         //Max local args is 16, limit reached. So last 4 values are not compared
+        (patientID, prescriberID, dispenserID, drugID, drugQuantity, fulfillmentDates, dateWritten, , , , ) = pContract.getPrescription(index);
+        Assert.equal(patientID, data.patientID, "PatientID error....");
     }
 }

@@ -39,7 +39,7 @@ contract PrescriptionBase {
         // The dates in which the drug was fulfilled
         // Will have to encode this on the frontend (likely just unix time) for all dates
         // Arrays must be static in order to pass them around. So, this is constrained to 16 value, at the moment.
-        uint64[16] fullfillmentDates;
+        uint64[16] fulfillmentDates;
         // The date the prescription was prescribed
         uint64 dateWritten; 
         // The amount of days that the prescription is valid for pickup. 

@@ -18,7 +18,7 @@ contract Patient is PrescriptionData, PrescriptionAccessControl{
         uint128 dispenserID,
         uint64 drugID,
         string memory drugQuantity, 
-        uint64[16] memory fullfillmentDates,
+        uint64[16] memory fulfillmentDates,
         uint64 dateWritten,  
         uint16 daysValid,
         uint8 refillsLeft,
@@ -35,17 +35,12 @@ contract Patient is PrescriptionData, PrescriptionAccessControl{
         dispenserID = patient.dispenserID;
         drugID = patient.drugID;
         drugQuantity = patient.drugQuantity;
-        fullfillmentDates = patient.fullfillmentDates;
+        fulfillmentDates = patient.fulfillmentDates;
         dateWritten = patient.dateWritten;
         daysValid = patient.daysValid;
         refillsLeft = patient.refillsLeft;
         isCancelled = patient.isCancelled;
         cancelDate = patient.cancelDate; 
-    }
-
-    function ac(uint p) public returns (uint) {
-        
-        return drugChain.length;
     }
     
 }

@@ -40,16 +40,43 @@ contract PrescriptionData is PrescriptionBase {
         isCancelled = patient.isCancelled;
         cancelDate = patient.cancelDate;
     }*/
-
-    function getPrescription(uint chainIndex) public view returns (Prescription){
+//Fullfilment date and refill left removed
+    function getPrescription(uint chainIndex) public view returns (uint256, uint128, uint128, uint64, string, uint64[16], uint64, uint16, uint8, bool, uint64){
         Prescription memory p = drugChain[chainIndex];
-        return p;
+        return (p.patientID, p.prescriberID, p.dispenserID, p.drugID, p.drugQuantity,
+        p.fulfillmentDates, p.dateWritten, p.daysValid, p.refillsLeft, p.isCancelled, p.cancelDate);
+    }
+
+    function getDrugChainLength() public view returns (uint) {
+        return drugChain.length;
     }
     
     /*
     */
-    function addPrescription(Prescription prescriptionOrder) public returns (uint) {
-        drugChain.push(prescriptionOrder);
-        return drugChain.length - 1;
+
+        //uint64[] fullfillmentDates,
+        //uint8[] refillsLeft,
+    function addPrescription(
+        uint256 patientID,
+        uint128 prescriberID,
+        uint128 dispenserID,
+        uint64 drugID,
+        string drugQuantity, 
+        uint64[16] fulfillmentDates,
+        uint64 dateWritten,  
+        uint16 daysValid,
+        uint8 refillsLeft,
+        bool isCancelled, 
+        uint64 cancelDate) public returns (uint) {
+        //drugChain.push((patientID,prescriberID,dispenserID,drugID,drugQuantity,dateWritten,daysValid,isCancelled,cancelDate));
+        /*fullfillmentDates,*/
+        Prescription memory p = Prescription(patientID,prescriberID,dispenserID,drugID,drugQuantity,
+        fulfillmentDates,dateWritten, daysValid, refillsLeft, isCancelled, cancelDate);
+
+        drugChain.push(p);
+        return drugChain.length -1;
+
+
     }
+
 }
