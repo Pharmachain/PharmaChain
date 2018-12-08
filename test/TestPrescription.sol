@@ -1,34 +1,6 @@
-pragma experimental ABIEncoderV2;
-
-
-import "truffle/Assert.sol";
-import "truffle/DeployedAddresses.sol";
-import "../contracts/PrescriptionData.sol";
-import "../contracts/PrescriptionBase.sol";
-
-contract TestPrescription is PrescriptionBase{
-
-    PrescriptionData pContract = PrescriptionData(DeployedAddresses.PrescriptionData());
-    
-    uint64[16] fu; // cannot assign arrays as a constant. So, this var must be here.
-    Prescription data = Prescription({
-        patientID: 0,
-        prescriberID: 1,
-        dispenserID: 2,
-        drugID : 34,
-        drugQuantity: "300mg",
-        fulfillmentDates: fu,
-        dateWritten: 1542357074,
-        daysValid: 200,
-        refillsLeft: 8,
-        isCancelled: false,
-        cancelDate: 0
-    });
-
-
-    // Test the ability to add a prescription
-    function testAdding() public {
-        uint index = pContract.addPrescription(data.patientID, data.prescriberID, data.dispenserID, data.drugID,
+// Test the ability to add a prescription
+    function testAddingPrescription() public {
+        uint index = p.addPrescription(data.patientID, data.prescriberID, data.dispenserID, data.drugID,
         data.drugQuantity, data.fulfillmentDates, data.dateWritten, data.daysValid, data.refillsLeft,
         data.isCancelled, data.cancelDate);
         Assert.equal(0, index, "index return error");
@@ -41,8 +13,18 @@ contract TestPrescription is PrescriptionBase{
         uint64[16] memory fulfillmentDates;
         uint64 dateWritten;
 
-         //Max local args is 16, limit reached. So last 4 values are not compared
-        (patientID, prescriberID, dispenserID, drugID, drugQuantity, fulfillmentDates, dateWritten, , , , ) = pContract.getPrescription(index);
-        Assert.equal(patientID, data.patientID, "PatientID error....");
+        //Max local args is 16, limit reached. So last 4 values are not compared
+        (patientID, prescriberID, dispenserID, drugID, drugQuantity, fulfillmentDates, dateWritten, , , , ) = p.getPatientPrescription(index);
+
+        Assert.equal(uint(patientID), uint(data.patientID), "PatientID error....");
+        Assert.equal(uint(prescriberID), uint(data.prescriberID), "PrescriberID error....");
+        Assert.equal(string(drugQuantity), string(data.drugQuantity), "Drug quantity error....");
     }
-}
+    
+    // Tests the results of an improper access for a prescription. 
+    function testImproperChainIndexCheck() public {
+        bool result = DeployedAddresses.Patient().call(bytes4(bytes32(keccak256("getPatientPrescription(2)"))));
+        Assert.isFalse(result, "Failed to get prescription 2.");
+        result = DeployedAddresses.Patient().call(bytes4(bytes32(keccak256("getPatientPrescription(0)"))));
+        Assert.isFalse(result, "Failed to get prescription 0.");
+    }
