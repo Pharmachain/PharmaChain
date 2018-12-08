@@ -1,4 +1,35 @@
-// Test the ability to add a prescription
+pragma experimental ABIEncoderV2;
+
+
+import "truffle/Assert.sol";
+import "truffle/DeployedAddresses.sol";
+import "../contracts/PrescriptionData.sol";
+import "../contracts/PrescriptionBase.sol";
+import "../contracts/Patient.sol";
+
+//Truffle Test Docs for Errors: https://truffleframework.com/tutorials/testing-for-throws-in-solidity-tests
+
+contract TestPatient is PrescriptionBase{
+    
+    Patient p = Patient(DeployedAddresses.Patient());
+
+    uint64[16] fu; // cannot assign arrays as a constant. So, this var must be here.
+    Prescription data = Prescription({
+        patientID: 0,
+        prescriberID: 1,
+        dispenserID: 2,
+        drugID : 34,
+        drugQuantity: "300mg",
+        fulfillmentDates: fu,
+        dateWritten: 1542357074,
+        daysValid: 200,
+        refillsLeft: 8,
+        isCancelled: false,
+        cancelDate: 0
+    });
+
+
+    // Test the ability to add a prescription
     function testAddingPrescription() public {
         uint index = p.addPrescription(data.patientID, data.prescriberID, data.dispenserID, data.drugID,
         data.drugQuantity, data.fulfillmentDates, data.dateWritten, data.daysValid, data.refillsLeft,
@@ -28,3 +59,4 @@
         result = DeployedAddresses.Patient().call(bytes4(bytes32(keccak256("getPatientPrescription(0)"))));
         Assert.isFalse(result, "Failed to get prescription 0.");
     }
+}
