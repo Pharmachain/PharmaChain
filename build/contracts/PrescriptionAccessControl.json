@@ -1,0 +1,537 @@
+{
+  "contractName": "PrescriptionAccessControl",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a723058200a334f9f22b4f62615370fcb9b9e650df99028d41b61300c72d098ec733a77cc0029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a723058200a334f9f22b4f62615370fcb9b9e650df99028d41b61300c72d098ec733a77cc0029",
+  "sourceMap": "192:433:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;192:433:2;;;;;;;",
+  "deployedSourceMap": "192:433:2:-;;;;;",
+  "source": "pragma solidity ^0.5.0;\nimport \"./PrescriptionBase.sol\";\nimport \"./PrescriptionData.sol\";\n\n/*\nWill be inheritted into classes to ensure that only the proper users access the correct data. \n*/\ncontract PrescriptionAccessControl {\n     \n    // Defining a users role in the system\n    // Uses the entities wallet address to find a user defined role.\n    mapping(address => PrescriptionBase.Role) userRoles;\n\n    // Ensures that a user is a patient\n    modifier onlyPatient() {\n        require(1 == 1, \"AHHHHHHHHHHHHHHHHHH\");\n        // require(userRoles[msg.sender] == Role.PATIENT, \"User is not a patient.\");\n        _;\n    }\n}\n",
+  "sourcePath": "/home/jeb/PharmaChain/contracts/PrescriptionAccessControl.sol",
+  "ast": {
+    "absolutePath": "/home/jeb/PharmaChain/contracts/PrescriptionAccessControl.sol",
+    "exportedSymbols": {
+      "PrescriptionAccessControl": [
+        186
+      ]
+    },
+    "id": 187,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 168,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "absolutePath": "/home/jeb/PharmaChain/contracts/PrescriptionBase.sol",
+        "file": "./PrescriptionBase.sol",
+        "id": 169,
+        "nodeType": "ImportDirective",
+        "scope": 187,
+        "sourceUnit": 221,
+        "src": "24:32:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/jeb/PharmaChain/contracts/PrescriptionData.sol",
+        "file": "./PrescriptionData.sol",
+        "id": 170,
+        "nodeType": "ImportDirective",
+        "scope": 187,
+        "sourceUnit": 359,
+        "src": "57:32:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 186,
+        "linearizedBaseContracts": [
+          186
+        ],
+        "name": "PrescriptionAccessControl",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 174,
+            "name": "userRoles",
+            "nodeType": "VariableDeclaration",
+            "scope": 186,
+            "src": "351:51:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_enum$_Role_$194_$",
+              "typeString": "mapping(address => enum PrescriptionBase.Role)"
+            },
+            "typeName": {
+              "id": 173,
+              "keyType": {
+                "id": 171,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "359:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "351:41:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_Role_$194_$",
+                "typeString": "mapping(address => enum PrescriptionBase.Role)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 172,
+                "name": "PrescriptionBase.Role",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 194,
+                "src": "370:21:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Role_$194",
+                  "typeString": "enum PrescriptionBase.Role"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 184,
+              "nodeType": "Block",
+              "src": "472:151:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        "id": 179,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "31",
+                          "id": 177,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "490:1:2",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          },
+                          "value": "1"
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "31",
+                          "id": 178,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "495:1:2",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          },
+                          "value": "1"
+                        },
+                        "src": "490:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "41484848484848484848484848484848484848",
+                        "id": 180,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "498:21:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_ce040e00eb3b039c2a5669074a7621d20c7fbb2839bfd4ed76e37ab168b6f34a",
+                          "typeString": "literal_string \"AHHHHHHHHHHHHHHHHHH\""
+                        },
+                        "value": "AHHHHHHHHHHHHHHHHHH"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_ce040e00eb3b039c2a5669074a7621d20c7fbb2839bfd4ed76e37ab168b6f34a",
+                          "typeString": "literal_string \"AHHHHHHHHHHHHHHHHHH\""
+                        }
+                      ],
+                      "id": 176,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        376,
+                        377
+                      ],
+                      "referencedDeclaration": 377,
+                      "src": "482:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 181,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "482:38:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 182,
+                  "nodeType": "ExpressionStatement",
+                  "src": "482:38:2"
+                },
+                {
+                  "id": 183,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "615:1:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 185,
+            "name": "onlyPatient",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 175,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "469:2:2"
+            },
+            "src": "449:174:2",
+            "visibility": "internal"
+          }
+        ],
+        "scope": 187,
+        "src": "192:433:2"
+      }
+    ],
+    "src": "0:626:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/jeb/PharmaChain/contracts/PrescriptionAccessControl.sol",
+    "exportedSymbols": {
+      "PrescriptionAccessControl": [
+        186
+      ]
+    },
+    "id": 187,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 168,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "absolutePath": "/home/jeb/PharmaChain/contracts/PrescriptionBase.sol",
+        "file": "./PrescriptionBase.sol",
+        "id": 169,
+        "nodeType": "ImportDirective",
+        "scope": 187,
+        "sourceUnit": 221,
+        "src": "24:32:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/jeb/PharmaChain/contracts/PrescriptionData.sol",
+        "file": "./PrescriptionData.sol",
+        "id": 170,
+        "nodeType": "ImportDirective",
+        "scope": 187,
+        "sourceUnit": 359,
+        "src": "57:32:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 186,
+        "linearizedBaseContracts": [
+          186
+        ],
+        "name": "PrescriptionAccessControl",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 174,
+            "name": "userRoles",
+            "nodeType": "VariableDeclaration",
+            "scope": 186,
+            "src": "351:51:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_enum$_Role_$194_$",
+              "typeString": "mapping(address => enum PrescriptionBase.Role)"
+            },
+            "typeName": {
+              "id": 173,
+              "keyType": {
+                "id": 171,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "359:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "351:41:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_enum$_Role_$194_$",
+                "typeString": "mapping(address => enum PrescriptionBase.Role)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 172,
+                "name": "PrescriptionBase.Role",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 194,
+                "src": "370:21:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Role_$194",
+                  "typeString": "enum PrescriptionBase.Role"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 184,
+              "nodeType": "Block",
+              "src": "472:151:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        "id": 179,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "31",
+                          "id": 177,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "490:1:2",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          },
+                          "value": "1"
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "31",
+                          "id": 178,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "495:1:2",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          },
+                          "value": "1"
+                        },
+                        "src": "490:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "41484848484848484848484848484848484848",
+                        "id": 180,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "498:21:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_ce040e00eb3b039c2a5669074a7621d20c7fbb2839bfd4ed76e37ab168b6f34a",
+                          "typeString": "literal_string \"AHHHHHHHHHHHHHHHHHH\""
+                        },
+                        "value": "AHHHHHHHHHHHHHHHHHH"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_ce040e00eb3b039c2a5669074a7621d20c7fbb2839bfd4ed76e37ab168b6f34a",
+                          "typeString": "literal_string \"AHHHHHHHHHHHHHHHHHH\""
+                        }
+                      ],
+                      "id": 176,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        376,
+                        377
+                      ],
+                      "referencedDeclaration": 377,
+                      "src": "482:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 181,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "482:38:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 182,
+                  "nodeType": "ExpressionStatement",
+                  "src": "482:38:2"
+                },
+                {
+                  "id": 183,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "615:1:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 185,
+            "name": "onlyPatient",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 175,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "469:2:2"
+            },
+            "src": "449:174:2",
+            "visibility": "internal"
+          }
+        ],
+        "scope": 187,
+        "src": "192:433:2"
+      }
+    ],
+    "src": "0:626:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-01-28T09:54:05.340Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

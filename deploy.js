@@ -18,7 +18,7 @@ async function deploy(contractName){
     account = account[0];
 
     // sets up deployment needs
-    let source = fs.readFileSync('/home/osboxes/PharmaChain/build/contracts/Patient.json'); 
+    let source = fs.readFileSync('/home/jeb/PharmaChain/build/contracts/Patient.json'); 
     let contracts = JSON.parse(source);
     let code = contracts.bytecode;
     let abi = contracts.abi;

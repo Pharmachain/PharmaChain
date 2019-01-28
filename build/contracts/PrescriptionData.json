@@ -1,0 +1,3759 @@
+{
+  "contractName": "PrescriptionData",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "drugChain",
+      "outputs": [
+        {
+          "name": "patientID",
+          "type": "uint256"
+        },
+        {
+          "name": "prescriberID",
+          "type": "uint128"
+        },
+        {
+          "name": "dispenserID",
+          "type": "uint128"
+        },
+        {
+          "name": "drugID",
+          "type": "uint64"
+        },
+        {
+          "name": "drugQuantity",
+          "type": "string"
+        },
+        {
+          "name": "dateWritten",
+          "type": "uint64"
+        },
+        {
+          "name": "daysValid",
+          "type": "uint16"
+        },
+        {
+          "name": "refillsLeft",
+          "type": "uint8"
+        },
+        {
+          "name": "isCancelled",
+          "type": "bool"
+        },
+        {
+          "name": "cancelDate",
+          "type": "uint64"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "chainIndex",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPrescription",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint128"
+        },
+        {
+          "name": "",
+          "type": "uint128"
+        },
+        {
+          "name": "",
+          "type": "uint64"
+        },
+        {
+          "name": "",
+          "type": "string"
+        },
+        {
+          "name": "",
+          "type": "uint64[16]"
+        },
+        {
+          "name": "",
+          "type": "uint64"
+        },
+        {
+          "name": "",
+          "type": "uint16"
+        },
+        {
+          "name": "",
+          "type": "uint8"
+        },
+        {
+          "name": "",
+          "type": "bool"
+        },
+        {
+          "name": "",
+          "type": "uint64"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getDrugChainLength",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "patientID",
+          "type": "uint256"
+        },
+        {
+          "name": "prescriberID",
+          "type": "uint128"
+        },
+        {
+          "name": "dispenserID",
+          "type": "uint128"
+        },
+        {
+          "name": "drugID",
+          "type": "uint64"
+        },
+        {
+          "name": "drugQuantity",
+          "type": "string"
+        },
+        {
+          "name": "fulfillmentDates",
+          "type": "uint64[16]"
+        },
+        {
+          "name": "dateWritten",
+          "type": "uint64"
+        },
+        {
+          "name": "daysValid",
+          "type": "uint16"
+        },
+        {
+          "name": "refillsLeft",
+          "type": "uint8"
+        },
+        {
+          "name": "isCancelled",
+          "type": "bool"
+        },
+        {
+          "name": "cancelDate",
+          "type": "uint64"
+        }
+      ],
+      "name": "addPrescription",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50610fdf806100206000396000f3fe608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680636f16af101461006757806385c681cf1461021f578063cc9e2fe4146103a8578063e9d20eff146103d3575b600080fd5b34801561007357600080fd5b506100a06004803603602081101561008a57600080fd5b8101908080359060200190929190505050610597565b604051808c81526020018b6fffffffffffffffffffffffffffffffff166fffffffffffffffffffffffffffffffff1681526020018a6fffffffffffffffffffffffffffffffff166fffffffffffffffffffffffffffffffff1681526020018967ffffffffffffffff1667ffffffffffffffff1681526020018060200188601060200280838360005b83811015610143578082015181840152602081019050610128565b505050509050018767ffffffffffffffff1667ffffffffffffffff1681526020018661ffff1661ffff1681526020018560ff1660ff168152602001841515151581526020018367ffffffffffffffff1667ffffffffffffffff168152602001828103825289818151815260200191508051906020019080838360005b838110156101da5780820151818401526020810190506101bf565b50505050905090810190601f1680156102075780820380516001836020036101000a031916815260200191505b509c5050505050505050505050505060405180910390f35b34801561022b57600080fd5b506102586004803603602081101561024257600080fd5b81019080803590602001909291905050506108f0565b604051808b81526020018a6fffffffffffffffffffffffffffffffff166fffffffffffffffffffffffffffffffff168152602001896fffffffffffffffffffffffffffffffff166fffffffffffffffffffffffffffffffff1681526020018867ffffffffffffffff1667ffffffffffffffff168152602001806020018767ffffffffffffffff1667ffffffffffffffff1681526020018661ffff1661ffff1681526020018560ff1660ff168152602001841515151581526020018367ffffffffffffffff1667ffffffffffffffff168152602001828103825288818151815260200191508051906020019080838360005b83811015610364578082015181840152602081019050610349565b50505050905090810190601f1680156103915780820380516001836020036101000a031916815260200191505b509b50505050505050505050505060405180910390f35b3480156103b457600080fd5b506103bd610a87565b6040518082815260200191505060405180910390f35b3480156103df57600080fd5b5061058160048036036103408110156103f757600080fd5b810190808035906020019092919080356fffffffffffffffffffffffffffffffff16906020019092919080356fffffffffffffffffffffffffffffffff169060200190929190803567ffffffffffffffff1690602001909291908035906020019064010000000081111561046a57600080fd5b82018360208201111561047c57600080fd5b8035906020019184600183028401116401000000008311171561049e57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908061020001906010806020026040519081016040528092919082601060200280828437600081840152601f19601f8201169050808301925050505050509192919290803567ffffffffffffffff169060200190929190803561ffff169060200190929190803560ff169060200190929190803515159060200190929190803567ffffffffffffffff169060200190929190505050610a93565b6040518082815260200191505060405180910390f35b60008060008060606105a7610d34565b60008060008060006105b7610d58565b60008d8154811015156105c657fe5b90600052602060002090600902016101606040519081016040529081600082015481526020016001820160009054906101000a90046fffffffffffffffffffffffffffffffff166fffffffffffffffffffffffffffffffff166fffffffffffffffffffffffffffffffff1681526020016001820160109054906101000a90046fffffffffffffffffffffffffffffffff166fffffffffffffffffffffffffffffffff166fffffffffffffffffffffffffffffffff1681526020016002820160009054906101000a900467ffffffffffffffff1667ffffffffffffffff1667ffffffffffffffff168152602001600382018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561074a5780601f1061071f5761010080835404028352916020019161074a565b820191906000526020600020905b81548152906001019060200180831161072d57829003601f168201915b50505050508152602001600482016010806020026040519081016040528092919082601080156107c3576020028201916000905b82829054906101000a900467ffffffffffffffff1667ffffffffffffffff168152602001906008019060208260070104928301926001038202915080841161077e5790505b505050505081526020016008820160009054906101000a900467ffffffffffffffff1667ffffffffffffffff1667ffffffffffffffff1681526020016008820160089054906101000a900461ffff1661ffff1661ffff16815260200160088201600a9054906101000a900460ff1660ff1660ff16815260200160088201600b9054906101000a900460ff1615151515815260200160088201600c9054906101000a900467ffffffffffffffff1667ffffffffffffffff1667ffffffffffffffff16815250509050806000015181602001518260400151836060015184608001518560a001518660c001518760e001518861010001518961012001518a61014001518696508595509b509b509b509b509b509b509b509b509b509b509b505091939597999b90929496989a50565b6000818154811015156108ff57fe5b90600052602060002090600902016000915090508060000154908060010160009054906101000a90046fffffffffffffffffffffffffffffffff16908060010160109054906101000a90046fffffffffffffffffffffffffffffffff16908060020160009054906101000a900467ffffffffffffffff1690806003018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610a0f5780601f106109e457610100808354040283529160200191610a0f565b820191906000526020600020905b8154815290600101906020018083116109f257829003601f168201915b5050505050908060080160009054906101000a900467ffffffffffffffff16908060080160089054906101000a900461ffff169080600801600a9054906101000a900460ff169080600801600b9054906101000a900460ff169080600801600c9054906101000a900467ffffffffffffffff1690508a565b60008080549050905090565b6000610a9d610d58565b610160604051908101604052808e81526020018d6fffffffffffffffffffffffffffffffff1681526020018c6fffffffffffffffffffffffffffffffff1681526020018b67ffffffffffffffff1681526020018a81526020018981526020018867ffffffffffffffff1681526020018761ffff1681526020018660ff16815260200185151581526020018467ffffffffffffffff168152509050600081908060018154018082558091505090600182039060005260206000209060090201600090919290919091506000820151816000015560208201518160010160006101000a8154816fffffffffffffffffffffffffffffffff02191690836fffffffffffffffffffffffffffffffff16021790555060408201518160010160106101000a8154816fffffffffffffffffffffffffffffffff02191690836fffffffffffffffffffffffffffffffff16021790555060608201518160020160006101000a81548167ffffffffffffffff021916908367ffffffffffffffff1602179055506080820151816003019080519060200190610c38929190610e04565b5060a082015181600401906010610c50929190610e84565b5060c08201518160080160006101000a81548167ffffffffffffffff021916908367ffffffffffffffff16021790555060e08201518160080160086101000a81548161ffff021916908361ffff16021790555061010082015181600801600a6101000a81548160ff021916908360ff16021790555061012082015181600801600b6101000a81548160ff02191690831515021790555061014082015181600801600c6101000a81548167ffffffffffffffff021916908367ffffffffffffffff1602179055505050506001600080549050039150509b9a5050505050505050505050565b61020060405190810160405280601090602082028038833980820191505090505090565b610340604051908101604052806000815260200160006fffffffffffffffffffffffffffffffff16815260200160006fffffffffffffffffffffffffffffffff168152602001600067ffffffffffffffff16815260200160608152602001610dbe610f33565b8152602001600067ffffffffffffffff168152602001600061ffff168152602001600060ff168152602001600015158152602001600067ffffffffffffffff1681525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610e4557805160ff1916838001178555610e73565b82800160010185558215610e73579182015b82811115610e72578251825591602001919060010190610e57565b5b509050610e809190610f57565b5090565b826010600301600490048101928215610f225791602002820160005b83821115610eec57835183826101000a81548167ffffffffffffffff021916908367ffffffffffffffff1602179055509260200192600801602081600701049283019260010302610ea0565b8015610f205782816101000a81549067ffffffffffffffff0219169055600801602081600701049283019260010302610eec565b505b509050610f2f9190610f7c565b5090565b61020060405190810160405280601090602082028038833980820191505090505090565b610f7991905b80821115610f75576000816000905550600101610f5d565b5090565b90565b610fb091905b80821115610fac57600081816101000a81549067ffffffffffffffff021916905550600101610f82565b5090565b9056fea165627a7a7230582065d20952253fb36af6cce918444d7e4c546c33c67ab75ec9452ddc8f6a8c05b90029",
+  "deployedBytecode": "0x608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680636f16af101461006757806385c681cf1461021f578063cc9e2fe4146103a8578063e9d20eff146103d3575b600080fd5b34801561007357600080fd5b506100a06004803603602081101561008a57600080fd5b8101908080359060200190929190505050610597565b604051808c81526020018b6fffffffffffffffffffffffffffffffff166fffffffffffffffffffffffffffffffff1681526020018a6fffffffffffffffffffffffffffffffff166fffffffffffffffffffffffffffffffff1681526020018967ffffffffffffffff1667ffffffffffffffff1681526020018060200188601060200280838360005b83811015610143578082015181840152602081019050610128565b505050509050018767ffffffffffffffff1667ffffffffffffffff1681526020018661ffff1661ffff1681526020018560ff1660ff168152602001841515151581526020018367ffffffffffffffff1667ffffffffffffffff168152602001828103825289818151815260200191508051906020019080838360005b838110156101da5780820151818401526020810190506101bf565b50505050905090810190601f1680156102075780820380516001836020036101000a031916815260200191505b509c5050505050505050505050505060405180910390f35b34801561022b57600080fd5b506102586004803603602081101561024257600080fd5b81019080803590602001909291905050506108f0565b604051808b81526020018a6fffffffffffffffffffffffffffffffff166fffffffffffffffffffffffffffffffff168152602001896fffffffffffffffffffffffffffffffff166fffffffffffffffffffffffffffffffff1681526020018867ffffffffffffffff1667ffffffffffffffff168152602001806020018767ffffffffffffffff1667ffffffffffffffff1681526020018661ffff1661ffff1681526020018560ff1660ff168152602001841515151581526020018367ffffffffffffffff1667ffffffffffffffff168152602001828103825288818151815260200191508051906020019080838360005b83811015610364578082015181840152602081019050610349565b50505050905090810190601f1680156103915780820380516001836020036101000a031916815260200191505b509b50505050505050505050505060405180910390f35b3480156103b457600080fd5b506103bd610a87565b6040518082815260200191505060405180910390f35b3480156103df57600080fd5b5061058160048036036103408110156103f757600080fd5b810190808035906020019092919080356fffffffffffffffffffffffffffffffff16906020019092919080356fffffffffffffffffffffffffffffffff169060200190929190803567ffffffffffffffff1690602001909291908035906020019064010000000081111561046a57600080fd5b82018360208201111561047c57600080fd5b8035906020019184600183028401116401000000008311171561049e57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908061020001906010806020026040519081016040528092919082601060200280828437600081840152601f19601f8201169050808301925050505050509192919290803567ffffffffffffffff169060200190929190803561ffff169060200190929190803560ff169060200190929190803515159060200190929190803567ffffffffffffffff169060200190929190505050610a93565b6040518082815260200191505060405180910390f35b60008060008060606105a7610d34565b60008060008060006105b7610d58565b60008d8154811015156105c657fe5b90600052602060002090600902016101606040519081016040529081600082015481526020016001820160009054906101000a90046fffffffffffffffffffffffffffffffff166fffffffffffffffffffffffffffffffff166fffffffffffffffffffffffffffffffff1681526020016001820160109054906101000a90046fffffffffffffffffffffffffffffffff166fffffffffffffffffffffffffffffffff166fffffffffffffffffffffffffffffffff1681526020016002820160009054906101000a900467ffffffffffffffff1667ffffffffffffffff1667ffffffffffffffff168152602001600382018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561074a5780601f1061071f5761010080835404028352916020019161074a565b820191906000526020600020905b81548152906001019060200180831161072d57829003601f168201915b50505050508152602001600482016010806020026040519081016040528092919082601080156107c3576020028201916000905b82829054906101000a900467ffffffffffffffff1667ffffffffffffffff168152602001906008019060208260070104928301926001038202915080841161077e5790505b505050505081526020016008820160009054906101000a900467ffffffffffffffff1667ffffffffffffffff1667ffffffffffffffff1681526020016008820160089054906101000a900461ffff1661ffff1661ffff16815260200160088201600a9054906101000a900460ff1660ff1660ff16815260200160088201600b9054906101000a900460ff1615151515815260200160088201600c9054906101000a900467ffffffffffffffff1667ffffffffffffffff1667ffffffffffffffff16815250509050806000015181602001518260400151836060015184608001518560a001518660c001518760e001518861010001518961012001518a61014001518696508595509b509b509b509b509b509b509b509b509b509b509b505091939597999b90929496989a50565b6000818154811015156108ff57fe5b90600052602060002090600902016000915090508060000154908060010160009054906101000a90046fffffffffffffffffffffffffffffffff16908060010160109054906101000a90046fffffffffffffffffffffffffffffffff16908060020160009054906101000a900467ffffffffffffffff1690806003018054600181600116156101000203166002900480601f016020809104026020016040519081016040528092919081815260200182805460018160011615610100020316600290048015610a0f5780601f106109e457610100808354040283529160200191610a0f565b820191906000526020600020905b8154815290600101906020018083116109f257829003601f168201915b5050505050908060080160009054906101000a900467ffffffffffffffff16908060080160089054906101000a900461ffff169080600801600a9054906101000a900460ff169080600801600b9054906101000a900460ff169080600801600c9054906101000a900467ffffffffffffffff1690508a565b60008080549050905090565b6000610a9d610d58565b610160604051908101604052808e81526020018d6fffffffffffffffffffffffffffffffff1681526020018c6fffffffffffffffffffffffffffffffff1681526020018b67ffffffffffffffff1681526020018a81526020018981526020018867ffffffffffffffff1681526020018761ffff1681526020018660ff16815260200185151581526020018467ffffffffffffffff168152509050600081908060018154018082558091505090600182039060005260206000209060090201600090919290919091506000820151816000015560208201518160010160006101000a8154816fffffffffffffffffffffffffffffffff02191690836fffffffffffffffffffffffffffffffff16021790555060408201518160010160106101000a8154816fffffffffffffffffffffffffffffffff02191690836fffffffffffffffffffffffffffffffff16021790555060608201518160020160006101000a81548167ffffffffffffffff021916908367ffffffffffffffff1602179055506080820151816003019080519060200190610c38929190610e04565b5060a082015181600401906010610c50929190610e84565b5060c08201518160080160006101000a81548167ffffffffffffffff021916908367ffffffffffffffff16021790555060e08201518160080160086101000a81548161ffff021916908361ffff16021790555061010082015181600801600a6101000a81548160ff021916908360ff16021790555061012082015181600801600b6101000a81548160ff02191690831515021790555061014082015181600801600c6101000a81548167ffffffffffffffff021916908367ffffffffffffffff1602179055505050506001600080549050039150509b9a5050505050505050505050565b61020060405190810160405280601090602082028038833980820191505090505090565b610340604051908101604052806000815260200160006fffffffffffffffffffffffffffffffff16815260200160006fffffffffffffffffffffffffffffffff168152602001600067ffffffffffffffff16815260200160608152602001610dbe610f33565b8152602001600067ffffffffffffffff168152602001600061ffff168152602001600060ff168152602001600015158152602001600067ffffffffffffffff1681525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610e4557805160ff1916838001178555610e73565b82800160010185558215610e73579182015b82811115610e72578251825591602001919060010190610e57565b5b509050610e809190610f57565b5090565b826010600301600490048101928215610f225791602002820160005b83821115610eec57835183826101000a81548167ffffffffffffffff021916908367ffffffffffffffff1602179055509260200192600801602081600701049283019260010302610ea0565b8015610f205782816101000a81549067ffffffffffffffff0219169055600801602081600701049283019260010302610eec565b505b509050610f2f9190610f7c565b5090565b61020060405190810160405280601090602082028038833980820191505090505090565b610f7991905b80821115610f75576000816000905550600101610f5d565b5090565b90565b610fb091905b80821115610fac57600081816101000a81549067ffffffffffffffff021916905550600101610f82565b5090565b9056fea165627a7a7230582065d20952253fb36af6cce918444d7e4c546c33c67ab75ec9452ddc8f6a8c05b90029",
+  "sourceMap": "60:2595:5:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;60:2595:5;;;;;;;",
+  "deployedSourceMap": "60:2595:5:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1241:417;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1241:417:5;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1241:417:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1241:417:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1241:417:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;118:31;;8:9:-1;5:2;;;30:1;27;20:12;5:2;118:31:5;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;118:31:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;118:31:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1664:97;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1664:97:5;;;;;;;;;;;;;;;;;;;;;;;1855:797;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1855:797:5;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;1855:797:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;1855:797:5;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;1855:797:5;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;1855:797:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;1855:797:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;1855:797:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1241:417;1304:7;1313;1322;1331:6;1339:13;1354:17;;:::i;:::-;1373:6;1381;1389:5;1396:4;1402:6;1419:21;;:::i;:::-;1443:9;1453:10;1443:21;;;;;;;;;;;;;;;;;;;;1419:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1482:1;:11;;;1495:1;:14;;;1511:1;:13;;;1526:1;:8;;;1536:1;:14;;;1560:1;:18;;;1580:1;:13;;;1595:1;:11;;;1608:1;:13;;;1623:1;:13;;;1638:1;:12;;;1474:177;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1241:417;;;;;;;;;;;;;:::o;118:31::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;1664:97::-;1715:4;1738:9;:16;;;;1731:23;;1664:97;:::o;1855:797::-;2224:4;2400:21;;:::i;:::-;2424:155;;;;;;;;;2437:9;2424:155;;;;2447:12;2424:155;;;;;;2460:11;2424:155;;;;;;2472:6;2424:155;;;;;;2479:12;2424:155;;;;2501:16;2424:155;;;;2518:11;2424:155;;;;;;2531:9;2424:155;;;;;;2542:11;2424:155;;;;;;2555:11;2424:155;;;;;;2568:10;2424:155;;;;;2400:179;;2590:9;2605:1;2590:17;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;2590:17:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2642:1;2624:9;:16;;;;:19;2617:26;;;1855:797;;;;;;;;;;;;;:::o;60:2595::-;;;;;;;;;;;;29:2:-1;21:6;17:15;117:4;105:10;97:6;88:34;148:4;140:6;136:17;126:27;;0:157;60:2595:5;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;29:2:-1;21:6;17:15;117:4;105:10;97:6;88:34;148:4;140:6;136:17;126:27;;0:157;60:2595:5;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\nimport \"./PrescriptionBase.sol\";\n\n\ncontract PrescriptionData is PrescriptionBase {\n\n    \n    Prescription[] public drugChain;\n\n    /*\n    Get a single prescription.\n    Args:\n        uint(chainIndex): The index of the drugChain;\n    */\n    /*\n    function getPrescription(uint chainIndex) public view returns (\n        uint256 patientID,\n        uint128 prescriberID,\n        uint128 dispenserID,\n        uint64 drugID,\n        string drugQuantity, \n        uint64[] fullfillmentDates,\n        uint64 dateWritten,  \n        uint16 daysValid,\n        uint8[] refillsLeft,\n        bool isCancelled, \n        uint64 cancelDate\n    ){\n        Prescription memory patient = drugChain[chainIndex];\n        patientID = patient.patientID;\n        prescriberID = patient.prescriberID;\n        dispenserID = patient.dispenserID;\n        drugID = patient.drugID;\n        drugQuantity = patient.drugQuantity;\n        fullfillmentDates = patient.fullfillmentDates;\n        dateWritten = patient.dateWritten;\n        daysValid = patient.daysValid;\n        refillsLeft = patient.refillsLeft;\n        isCancelled = patient.isCancelled;\n        cancelDate = patient.cancelDate;\n    }*/\n//Fullfilment date and refill left removed\n    function getPrescription(uint chainIndex) public view returns (uint256, uint128, uint128, uint64, string memory, uint64[16] memory, uint64, uint16, uint8, bool, uint64){\n        Prescription memory p = drugChain[chainIndex];\n        return (p.patientID, p.prescriberID, p.dispenserID, p.drugID, p.drugQuantity,\n        p.fulfillmentDates, p.dateWritten, p.daysValid, p.refillsLeft, p.isCancelled, p.cancelDate);\n    }\n\n    function getDrugChainLength() public view returns (uint) {\n        return drugChain.length;\n    }\n    \n    /*\n    */\n\n        //uint64[] fullfillmentDates,\n        //uint8[] refillsLeft,\n    function addPrescription(\n        uint256 patientID,\n        uint128 prescriberID,\n        uint128 dispenserID,\n        uint64 drugID,\n        string memory drugQuantity, \n        uint64[16] memory fulfillmentDates,\n        uint64 dateWritten,  \n        uint16 daysValid,\n        uint8 refillsLeft,\n        bool isCancelled, \n        uint64 cancelDate) public returns (uint) {\n        //drugChain.push((patientID,prescriberID,dispenserID,drugID,drugQuantity,dateWritten,daysValid,isCancelled,cancelDate));\n        /*fullfillmentDates,*/\n        Prescription memory p = Prescription(patientID,prescriberID,dispenserID,drugID,drugQuantity,\n        fulfillmentDates,dateWritten, daysValid, refillsLeft, isCancelled, cancelDate);\n\n        drugChain.push(p);\n        return drugChain.length -1;\n\n\n    }\n\n}\n",
+  "sourcePath": "/home/jeb/PharmaChain/contracts/PrescriptionData.sol",
+  "ast": {
+    "absolutePath": "/home/jeb/PharmaChain/contracts/PrescriptionData.sol",
+    "exportedSymbols": {
+      "PrescriptionData": [
+        358
+      ]
+    },
+    "id": 359,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 225,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:5"
+      },
+      {
+        "absolutePath": "/home/jeb/PharmaChain/contracts/PrescriptionBase.sol",
+        "file": "./PrescriptionBase.sol",
+        "id": 226,
+        "nodeType": "ImportDirective",
+        "scope": 359,
+        "sourceUnit": 221,
+        "src": "25:32:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 227,
+              "name": "PrescriptionBase",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 220,
+              "src": "89:16:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_PrescriptionBase_$220",
+                "typeString": "contract PrescriptionBase"
+              }
+            },
+            "id": 228,
+            "nodeType": "InheritanceSpecifier",
+            "src": "89:16:5"
+          }
+        ],
+        "contractDependencies": [
+          220
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 358,
+        "linearizedBaseContracts": [
+          358,
+          220
+        ],
+        "name": "PrescriptionData",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 231,
+            "name": "drugChain",
+            "nodeType": "VariableDeclaration",
+            "scope": 358,
+            "src": "118:31:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Prescription_$219_storage_$dyn_storage",
+              "typeString": "struct PrescriptionBase.Prescription[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 229,
+                "name": "Prescription",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 219,
+                "src": "118:12:5",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Prescription_$219_storage_ptr",
+                  "typeString": "struct PrescriptionBase.Prescription"
+                }
+              },
+              "id": 230,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "118:14:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Prescription_$219_storage_$dyn_storage_ptr",
+                "typeString": "struct PrescriptionBase.Prescription[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 290,
+              "nodeType": "Block",
+              "src": "1409:249:5",
+              "statements": [
+                {
+                  "assignments": [
+                    261
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 261,
+                      "name": "p",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 290,
+                      "src": "1419:21:5",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                        "typeString": "struct PrescriptionBase.Prescription"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 260,
+                        "name": "Prescription",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 219,
+                        "src": "1419:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Prescription_$219_storage_ptr",
+                          "typeString": "struct PrescriptionBase.Prescription"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 265,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 262,
+                      "name": "drugChain",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 231,
+                      "src": "1443:9:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Prescription_$219_storage_$dyn_storage",
+                        "typeString": "struct PrescriptionBase.Prescription storage ref[] storage ref"
+                      }
+                    },
+                    "id": 264,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 263,
+                      "name": "chainIndex",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 233,
+                      "src": "1453:10:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1443:21:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Prescription_$219_storage",
+                      "typeString": "struct PrescriptionBase.Prescription storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1419:45:5"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 266,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1482:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 267,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "patientID",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 196,
+                        "src": "1482:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 268,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1495:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 269,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "prescriberID",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 198,
+                        "src": "1495:14:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 270,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1511:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 271,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "dispenserID",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 200,
+                        "src": "1511:13:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 272,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1526:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 273,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "drugID",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 202,
+                        "src": "1526:8:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 274,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1536:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 275,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "drugQuantity",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 204,
+                        "src": "1536:14:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 276,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1560:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 277,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "fulfillmentDates",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 208,
+                        "src": "1560:18:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint64_$16_memory",
+                          "typeString": "uint64[16] memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 278,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1580:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 279,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "dateWritten",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 210,
+                        "src": "1580:13:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 280,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1595:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 281,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "daysValid",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 212,
+                        "src": "1595:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint16",
+                          "typeString": "uint16"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 282,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1608:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 283,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "refillsLeft",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 214,
+                        "src": "1608:13:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 284,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1623:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 285,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "isCancelled",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 216,
+                        "src": "1623:13:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 286,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1638:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 287,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "cancelDate",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 218,
+                        "src": "1638:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      }
+                    ],
+                    "id": 288,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "1481:170:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_uint128_$_t_uint128_$_t_uint64_$_t_string_memory_$_t_array$_t_uint64_$16_memory_$_t_uint64_$_t_uint16_$_t_uint8_$_t_bool_$_t_uint64_$",
+                      "typeString": "tuple(uint256,uint128,uint128,uint64,string memory,uint64[16] memory,uint64,uint16,uint8,bool,uint64)"
+                    }
+                  },
+                  "functionReturnParameters": 259,
+                  "id": 289,
+                  "nodeType": "Return",
+                  "src": "1474:177:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 291,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPrescription",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 234,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 233,
+                  "name": "chainIndex",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1266:15:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 232,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1266:4:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1265:17:5"
+            },
+            "returnParameters": {
+              "id": 259,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 236,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1304:7:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 235,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1304:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 238,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1313:7:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 237,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1313:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 240,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1322:7:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 239,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1322:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 242,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1331:6:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 241,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1331:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 244,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1339:13:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 243,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1339:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 248,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1354:17:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint64_$16_memory_ptr",
+                    "typeString": "uint64[16]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 245,
+                      "name": "uint64",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1354:6:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint64",
+                        "typeString": "uint64"
+                      }
+                    },
+                    "id": 247,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "3136",
+                      "id": 246,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1361:2:5",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": null,
+                        "typeString": null
+                      },
+                      "value": "16"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "1354:10:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint64_$16_storage_ptr",
+                      "typeString": "uint64[16]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 250,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1373:6:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 249,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1373:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 252,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1381:6:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 251,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1381:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 254,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1389:5:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 253,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1389:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 256,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1396:4:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 255,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1396:4:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 258,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1402:6:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 257,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1402:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1303:106:5"
+            },
+            "scope": 358,
+            "src": "1241:417:5",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 299,
+              "nodeType": "Block",
+              "src": "1721:40:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 296,
+                      "name": "drugChain",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 231,
+                      "src": "1738:9:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Prescription_$219_storage_$dyn_storage",
+                        "typeString": "struct PrescriptionBase.Prescription storage ref[] storage ref"
+                      }
+                    },
+                    "id": 297,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "1738:16:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 295,
+                  "id": 298,
+                  "nodeType": "Return",
+                  "src": "1731:23:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 300,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDrugChainLength",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 292,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1691:2:5"
+            },
+            "returnParameters": {
+              "id": 295,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 294,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 300,
+                  "src": "1715:4:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 293,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1715:4:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1714:6:5"
+            },
+            "scope": 358,
+            "src": "1664:97:5",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 356,
+              "nodeType": "Block",
+              "src": "2230:422:5",
+              "statements": [
+                {
+                  "assignments": [
+                    330
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 330,
+                      "name": "p",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 356,
+                      "src": "2400:21:5",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                        "typeString": "struct PrescriptionBase.Prescription"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 329,
+                        "name": "Prescription",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 219,
+                        "src": "2400:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Prescription_$219_storage_ptr",
+                          "typeString": "struct PrescriptionBase.Prescription"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 344,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 332,
+                        "name": "patientID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 302,
+                        "src": "2437:9:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 333,
+                        "name": "prescriberID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 304,
+                        "src": "2447:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 334,
+                        "name": "dispenserID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 306,
+                        "src": "2460:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 335,
+                        "name": "drugID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 308,
+                        "src": "2472:6:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 336,
+                        "name": "drugQuantity",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 310,
+                        "src": "2479:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 337,
+                        "name": "fulfillmentDates",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 314,
+                        "src": "2501:16:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint64_$16_memory_ptr",
+                          "typeString": "uint64[16] memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 338,
+                        "name": "dateWritten",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 316,
+                        "src": "2518:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 339,
+                        "name": "daysValid",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 318,
+                        "src": "2531:9:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint16",
+                          "typeString": "uint16"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 340,
+                        "name": "refillsLeft",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 320,
+                        "src": "2542:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 341,
+                        "name": "isCancelled",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 322,
+                        "src": "2555:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 342,
+                        "name": "cancelDate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 324,
+                        "src": "2568:10:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        },
+                        {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        },
+                        {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_uint64_$16_memory_ptr",
+                          "typeString": "uint64[16] memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        },
+                        {
+                          "typeIdentifier": "t_uint16",
+                          "typeString": "uint16"
+                        },
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      ],
+                      "id": 331,
+                      "name": "Prescription",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 219,
+                      "src": "2424:12:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_Prescription_$219_storage_ptr_$",
+                        "typeString": "type(struct PrescriptionBase.Prescription storage pointer)"
+                      }
+                    },
+                    "id": 343,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2424:155:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Prescription_$219_memory",
+                      "typeString": "struct PrescriptionBase.Prescription memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2400:179:5"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 348,
+                        "name": "p",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 330,
+                        "src": "2605:1:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                          "typeString": "struct PrescriptionBase.Prescription memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                          "typeString": "struct PrescriptionBase.Prescription memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 345,
+                        "name": "drugChain",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 231,
+                        "src": "2590:9:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Prescription_$219_storage_$dyn_storage",
+                          "typeString": "struct PrescriptionBase.Prescription storage ref[] storage ref"
+                        }
+                      },
+                      "id": 347,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "2590:14:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Prescription_$219_storage_$returns$_t_uint256_$",
+                        "typeString": "function (struct PrescriptionBase.Prescription storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 349,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2590:17:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 350,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2590:17:5"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 354,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 351,
+                        "name": "drugChain",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 231,
+                        "src": "2624:9:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Prescription_$219_storage_$dyn_storage",
+                          "typeString": "struct PrescriptionBase.Prescription storage ref[] storage ref"
+                        }
+                      },
+                      "id": 352,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "length",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "2624:16:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "-",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 353,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2642:1:5",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "2624:19:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 328,
+                  "id": 355,
+                  "nodeType": "Return",
+                  "src": "2617:26:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 357,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addPrescription",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 325,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 302,
+                  "name": "patientID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "1889:17:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 301,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1889:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 304,
+                  "name": "prescriberID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "1916:20:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 303,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1916:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 306,
+                  "name": "dispenserID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "1946:19:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 305,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1946:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 308,
+                  "name": "drugID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "1975:13:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 307,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1975:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 310,
+                  "name": "drugQuantity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "1998:26:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 309,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1998:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 314,
+                  "name": "fulfillmentDates",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "2035:34:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint64_$16_memory_ptr",
+                    "typeString": "uint64[16]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 311,
+                      "name": "uint64",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2035:6:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint64",
+                        "typeString": "uint64"
+                      }
+                    },
+                    "id": 313,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "3136",
+                      "id": 312,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2042:2:5",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": null,
+                        "typeString": null
+                      },
+                      "value": "16"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "2035:10:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint64_$16_storage_ptr",
+                      "typeString": "uint64[16]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 316,
+                  "name": "dateWritten",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "2079:18:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 315,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2079:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 318,
+                  "name": "daysValid",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "2109:16:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 317,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2109:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 320,
+                  "name": "refillsLeft",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "2135:17:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 319,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2135:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 322,
+                  "name": "isCancelled",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "2162:16:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 321,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2162:4:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 324,
+                  "name": "cancelDate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "2189:17:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 323,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2189:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1879:328:5"
+            },
+            "returnParameters": {
+              "id": 328,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 327,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "2224:4:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 326,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2224:4:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2223:6:5"
+            },
+            "scope": 358,
+            "src": "1855:797:5",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 359,
+        "src": "60:2595:5"
+      }
+    ],
+    "src": "0:2656:5"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/jeb/PharmaChain/contracts/PrescriptionData.sol",
+    "exportedSymbols": {
+      "PrescriptionData": [
+        358
+      ]
+    },
+    "id": 359,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 225,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:5"
+      },
+      {
+        "absolutePath": "/home/jeb/PharmaChain/contracts/PrescriptionBase.sol",
+        "file": "./PrescriptionBase.sol",
+        "id": 226,
+        "nodeType": "ImportDirective",
+        "scope": 359,
+        "sourceUnit": 221,
+        "src": "25:32:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 227,
+              "name": "PrescriptionBase",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 220,
+              "src": "89:16:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_PrescriptionBase_$220",
+                "typeString": "contract PrescriptionBase"
+              }
+            },
+            "id": 228,
+            "nodeType": "InheritanceSpecifier",
+            "src": "89:16:5"
+          }
+        ],
+        "contractDependencies": [
+          220
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 358,
+        "linearizedBaseContracts": [
+          358,
+          220
+        ],
+        "name": "PrescriptionData",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 231,
+            "name": "drugChain",
+            "nodeType": "VariableDeclaration",
+            "scope": 358,
+            "src": "118:31:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Prescription_$219_storage_$dyn_storage",
+              "typeString": "struct PrescriptionBase.Prescription[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 229,
+                "name": "Prescription",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 219,
+                "src": "118:12:5",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Prescription_$219_storage_ptr",
+                  "typeString": "struct PrescriptionBase.Prescription"
+                }
+              },
+              "id": 230,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "118:14:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Prescription_$219_storage_$dyn_storage_ptr",
+                "typeString": "struct PrescriptionBase.Prescription[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 290,
+              "nodeType": "Block",
+              "src": "1409:249:5",
+              "statements": [
+                {
+                  "assignments": [
+                    261
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 261,
+                      "name": "p",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 290,
+                      "src": "1419:21:5",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                        "typeString": "struct PrescriptionBase.Prescription"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 260,
+                        "name": "Prescription",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 219,
+                        "src": "1419:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Prescription_$219_storage_ptr",
+                          "typeString": "struct PrescriptionBase.Prescription"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 265,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 262,
+                      "name": "drugChain",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 231,
+                      "src": "1443:9:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Prescription_$219_storage_$dyn_storage",
+                        "typeString": "struct PrescriptionBase.Prescription storage ref[] storage ref"
+                      }
+                    },
+                    "id": 264,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 263,
+                      "name": "chainIndex",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 233,
+                      "src": "1453:10:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1443:21:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Prescription_$219_storage",
+                      "typeString": "struct PrescriptionBase.Prescription storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1419:45:5"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "components": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 266,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1482:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 267,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "patientID",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 196,
+                        "src": "1482:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 268,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1495:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 269,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "prescriberID",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 198,
+                        "src": "1495:14:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 270,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1511:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 271,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "dispenserID",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 200,
+                        "src": "1511:13:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 272,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1526:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 273,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "drugID",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 202,
+                        "src": "1526:8:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 274,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1536:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 275,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "drugQuantity",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 204,
+                        "src": "1536:14:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 276,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1560:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 277,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "fulfillmentDates",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 208,
+                        "src": "1560:18:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint64_$16_memory",
+                          "typeString": "uint64[16] memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 278,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1580:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 279,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "dateWritten",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 210,
+                        "src": "1580:13:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 280,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1595:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 281,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "daysValid",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 212,
+                        "src": "1595:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint16",
+                          "typeString": "uint16"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 282,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1608:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 283,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "refillsLeft",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 214,
+                        "src": "1608:13:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 284,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1623:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 285,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "isCancelled",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 216,
+                        "src": "1623:13:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 286,
+                          "name": "p",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 261,
+                          "src": "1638:1:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                            "typeString": "struct PrescriptionBase.Prescription memory"
+                          }
+                        },
+                        "id": 287,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "cancelDate",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 218,
+                        "src": "1638:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      }
+                    ],
+                    "id": 288,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "1481:170:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint256_$_t_uint128_$_t_uint128_$_t_uint64_$_t_string_memory_$_t_array$_t_uint64_$16_memory_$_t_uint64_$_t_uint16_$_t_uint8_$_t_bool_$_t_uint64_$",
+                      "typeString": "tuple(uint256,uint128,uint128,uint64,string memory,uint64[16] memory,uint64,uint16,uint8,bool,uint64)"
+                    }
+                  },
+                  "functionReturnParameters": 259,
+                  "id": 289,
+                  "nodeType": "Return",
+                  "src": "1474:177:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 291,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPrescription",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 234,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 233,
+                  "name": "chainIndex",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1266:15:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 232,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1266:4:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1265:17:5"
+            },
+            "returnParameters": {
+              "id": 259,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 236,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1304:7:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 235,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1304:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 238,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1313:7:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 237,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1313:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 240,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1322:7:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 239,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1322:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 242,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1331:6:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 241,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1331:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 244,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1339:13:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 243,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1339:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 248,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1354:17:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint64_$16_memory_ptr",
+                    "typeString": "uint64[16]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 245,
+                      "name": "uint64",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1354:6:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint64",
+                        "typeString": "uint64"
+                      }
+                    },
+                    "id": 247,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "3136",
+                      "id": 246,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1361:2:5",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": null,
+                        "typeString": null
+                      },
+                      "value": "16"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "1354:10:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint64_$16_storage_ptr",
+                      "typeString": "uint64[16]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 250,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1373:6:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 249,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1373:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 252,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1381:6:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 251,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1381:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 254,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1389:5:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 253,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1389:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 256,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1396:4:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 255,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1396:4:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 258,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 291,
+                  "src": "1402:6:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 257,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1402:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1303:106:5"
+            },
+            "scope": 358,
+            "src": "1241:417:5",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 299,
+              "nodeType": "Block",
+              "src": "1721:40:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 296,
+                      "name": "drugChain",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 231,
+                      "src": "1738:9:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Prescription_$219_storage_$dyn_storage",
+                        "typeString": "struct PrescriptionBase.Prescription storage ref[] storage ref"
+                      }
+                    },
+                    "id": 297,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "1738:16:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 295,
+                  "id": 298,
+                  "nodeType": "Return",
+                  "src": "1731:23:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 300,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDrugChainLength",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 292,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1691:2:5"
+            },
+            "returnParameters": {
+              "id": 295,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 294,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 300,
+                  "src": "1715:4:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 293,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1715:4:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1714:6:5"
+            },
+            "scope": 358,
+            "src": "1664:97:5",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 356,
+              "nodeType": "Block",
+              "src": "2230:422:5",
+              "statements": [
+                {
+                  "assignments": [
+                    330
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 330,
+                      "name": "p",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 356,
+                      "src": "2400:21:5",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                        "typeString": "struct PrescriptionBase.Prescription"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 329,
+                        "name": "Prescription",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 219,
+                        "src": "2400:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Prescription_$219_storage_ptr",
+                          "typeString": "struct PrescriptionBase.Prescription"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 344,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 332,
+                        "name": "patientID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 302,
+                        "src": "2437:9:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 333,
+                        "name": "prescriberID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 304,
+                        "src": "2447:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 334,
+                        "name": "dispenserID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 306,
+                        "src": "2460:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 335,
+                        "name": "drugID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 308,
+                        "src": "2472:6:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 336,
+                        "name": "drugQuantity",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 310,
+                        "src": "2479:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 337,
+                        "name": "fulfillmentDates",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 314,
+                        "src": "2501:16:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint64_$16_memory_ptr",
+                          "typeString": "uint64[16] memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 338,
+                        "name": "dateWritten",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 316,
+                        "src": "2518:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 339,
+                        "name": "daysValid",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 318,
+                        "src": "2531:9:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint16",
+                          "typeString": "uint16"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 340,
+                        "name": "refillsLeft",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 320,
+                        "src": "2542:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 341,
+                        "name": "isCancelled",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 322,
+                        "src": "2555:11:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 342,
+                        "name": "cancelDate",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 324,
+                        "src": "2568:10:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        },
+                        {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        },
+                        {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_uint64_$16_memory_ptr",
+                          "typeString": "uint64[16] memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        },
+                        {
+                          "typeIdentifier": "t_uint16",
+                          "typeString": "uint16"
+                        },
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      ],
+                      "id": 331,
+                      "name": "Prescription",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 219,
+                      "src": "2424:12:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_Prescription_$219_storage_ptr_$",
+                        "typeString": "type(struct PrescriptionBase.Prescription storage pointer)"
+                      }
+                    },
+                    "id": 343,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2424:155:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Prescription_$219_memory",
+                      "typeString": "struct PrescriptionBase.Prescription memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2400:179:5"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 348,
+                        "name": "p",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 330,
+                        "src": "2605:1:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                          "typeString": "struct PrescriptionBase.Prescription memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Prescription_$219_memory_ptr",
+                          "typeString": "struct PrescriptionBase.Prescription memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 345,
+                        "name": "drugChain",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 231,
+                        "src": "2590:9:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Prescription_$219_storage_$dyn_storage",
+                          "typeString": "struct PrescriptionBase.Prescription storage ref[] storage ref"
+                        }
+                      },
+                      "id": 347,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "2590:14:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Prescription_$219_storage_$returns$_t_uint256_$",
+                        "typeString": "function (struct PrescriptionBase.Prescription storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 349,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2590:17:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 350,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2590:17:5"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 354,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 351,
+                        "name": "drugChain",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 231,
+                        "src": "2624:9:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Prescription_$219_storage_$dyn_storage",
+                          "typeString": "struct PrescriptionBase.Prescription storage ref[] storage ref"
+                        }
+                      },
+                      "id": 352,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "length",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "2624:16:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "-",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "31",
+                      "id": 353,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2642:1:5",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_1_by_1",
+                        "typeString": "int_const 1"
+                      },
+                      "value": "1"
+                    },
+                    "src": "2624:19:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 328,
+                  "id": 355,
+                  "nodeType": "Return",
+                  "src": "2617:26:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 357,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addPrescription",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 325,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 302,
+                  "name": "patientID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "1889:17:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 301,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1889:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 304,
+                  "name": "prescriberID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "1916:20:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 303,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1916:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 306,
+                  "name": "dispenserID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "1946:19:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 305,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1946:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 308,
+                  "name": "drugID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "1975:13:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 307,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1975:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 310,
+                  "name": "drugQuantity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "1998:26:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 309,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1998:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 314,
+                  "name": "fulfillmentDates",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "2035:34:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint64_$16_memory_ptr",
+                    "typeString": "uint64[16]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 311,
+                      "name": "uint64",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "2035:6:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint64",
+                        "typeString": "uint64"
+                      }
+                    },
+                    "id": 313,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "3136",
+                      "id": 312,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "2042:2:5",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": null,
+                        "typeString": null
+                      },
+                      "value": "16"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "2035:10:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint64_$16_storage_ptr",
+                      "typeString": "uint64[16]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 316,
+                  "name": "dateWritten",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "2079:18:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 315,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2079:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 318,
+                  "name": "daysValid",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "2109:16:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 317,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2109:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 320,
+                  "name": "refillsLeft",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "2135:17:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 319,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2135:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 322,
+                  "name": "isCancelled",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "2162:16:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 321,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2162:4:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 324,
+                  "name": "cancelDate",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "2189:17:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 323,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2189:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1879:328:5"
+            },
+            "returnParameters": {
+              "id": 328,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 327,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 357,
+                  "src": "2224:4:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 326,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2224:4:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2223:6:5"
+            },
+            "scope": 358,
+            "src": "1855:797:5",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 359,
+        "src": "60:2595:5"
+      }
+    ],
+    "src": "0:2656:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-01-28T09:54:05.340Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

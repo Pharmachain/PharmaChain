@@ -1,0 +1,103 @@
+{
+  "contractName": "PrescriptionCore",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a723058200049711d3e1ee5a09543771e5e94e8aaff03ae77919f89dd849f355210735f690029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a723058200049711d3e1ee5a09543771e5e94e8aaff03ae77919f89dd849f355210735f690029",
+  "sourceMap": "24:33:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;24:33:4;;;;;;;",
+  "deployedSourceMap": "24:33:4:-;;;;;",
+  "source": "pragma solidity ^0.5.0;\ncontract PrescriptionCore{\n    \n}\n\n// Planned to be the main function, essentially.\n",
+  "sourcePath": "/home/jeb/PharmaChain/contracts/PrescriptionCore.sol",
+  "ast": {
+    "absolutePath": "/home/jeb/PharmaChain/contracts/PrescriptionCore.sol",
+    "exportedSymbols": {
+      "PrescriptionCore": [
+        223
+      ]
+    },
+    "id": 224,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 222,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 223,
+        "linearizedBaseContracts": [
+          223
+        ],
+        "name": "PrescriptionCore",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 224,
+        "src": "24:33:4"
+      }
+    ],
+    "src": "0:108:4"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/jeb/PharmaChain/contracts/PrescriptionCore.sol",
+    "exportedSymbols": {
+      "PrescriptionCore": [
+        223
+      ]
+    },
+    "id": 224,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 222,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 223,
+        "linearizedBaseContracts": [
+          223
+        ],
+        "name": "PrescriptionCore",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 224,
+        "src": "24:33:4"
+      }
+    ],
+    "src": "0:108:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-01-28T09:54:05.340Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

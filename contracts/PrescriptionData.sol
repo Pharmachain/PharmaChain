@@ -1,4 +1,4 @@
-pragma experimental ABIEncoderV2;
+pragma solidity ^0.5.0;
 
 import "./PrescriptionBase.sol";
 
@@ -41,7 +41,7 @@ contract PrescriptionData is PrescriptionBase {
         cancelDate = patient.cancelDate;
     }*/
 //Fullfilment date and refill left removed
-    function getPrescription(uint chainIndex) public view returns (uint256, uint128, uint128, uint64, string, uint64[16], uint64, uint16, uint8, bool, uint64){
+    function getPrescription(uint chainIndex) public view returns (uint256, uint128, uint128, uint64, string memory, uint64[16] memory, uint64, uint16, uint8, bool, uint64){
         Prescription memory p = drugChain[chainIndex];
         return (p.patientID, p.prescriberID, p.dispenserID, p.drugID, p.drugQuantity,
         p.fulfillmentDates, p.dateWritten, p.daysValid, p.refillsLeft, p.isCancelled, p.cancelDate);
@@ -61,8 +61,8 @@ contract PrescriptionData is PrescriptionBase {
         uint128 prescriberID,
         uint128 dispenserID,
         uint64 drugID,
-        string drugQuantity, 
-        uint64[16] fulfillmentDates,
+        string memory drugQuantity, 
+        uint64[16] memory fulfillmentDates,
         uint64 dateWritten,  
         uint16 daysValid,
         uint8 refillsLeft,
