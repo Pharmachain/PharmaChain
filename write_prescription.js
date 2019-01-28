@@ -18,7 +18,7 @@ async function write(patientID, prescriberID, dispenserID, drugID, drugQuantity,
     account = account[0];
 
     // Sets up deployment requirements
-    let source = fs.readFileSync('/home/jeb/PharmaChain/build/contracts/Patient.json'); 
+    let source = fs.readFileSync('./contracts/Patient.json'); 
     let contracts = JSON.parse(source);
     let code = contracts.bytecode;
     let abi = contracts.abi;

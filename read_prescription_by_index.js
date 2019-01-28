@@ -18,7 +18,7 @@ async function read(index_value){
     account = account[0];
 
     // Sets up contract requirements.
-    let source = fs.readFileSync('/home/jeb/PharmaChain/build/contracts/Patient.json'); 
+    let source = fs.readFileSync('./build/contracts/Patient.json'); 
     let contracts = JSON.parse(source);
     let code = contracts.bytecode;
     let abi = contracts.abi
