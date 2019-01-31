@@ -5,7 +5,7 @@ let net = require("net");
 /*  This function creates a new prescription on the drugChain
     User input: prescription arguments
     Argument list: patientID, prescriberID, dispenserID, drugID, drugQuantity, dateWritten, daysValid, refillsLeft, isCancelled, cancelDate
-    Example usage: node write_prescrip.js 0 1 2 34 '300MG' 1542357074 200 8 false 0   
+    Example usage: node write_prescription.js 0 1 2 34 '300MG' 1542357074 200 8 false 0   
 */
 
 async function write(patientID, prescriberID, dispenserID, drugID, drugQuantity, fulfillmentDates, dateWritten, daysValid, refillsLeft, isCancelled, cancelDate){
