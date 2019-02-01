@@ -1,3 +1,5 @@
+set -e
+cd ~/build
 #Pharmachain GitHub Pulls
 git clone https://github.com/Pharmachain/quorum-maker
 #git clone https://github.com/Pharmachain/PharmaChain
