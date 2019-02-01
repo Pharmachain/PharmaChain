@@ -1,10 +1,15 @@
 dist: xenial
 
+before_install:
+  -- npm i -g npm@6.4.1
+language: node_js
+node_js:
+  - "8"
+
 sudo:
   - yes
 
 before_script:
-  - npm i -g npm@6.4.1
   - sudo chmod +x install.sh
 script: 
   - sudo ./install.sh	
