@@ -2,6 +2,7 @@
 git clone https://github.com/Pharmachain/quorum-maker
 #git clone https://github.com/Pharmachain/PharmaChain
 git clone https://github.com/Pharmachain/WebPhapp
+cd ~
 #Docker, required for quorum maker
 #apt-get -y install docker-compose
 #apt-get -y install docker.io
@@ -12,6 +13,7 @@ apt-get -y update
 apt-get -y install ethereum
 
 #Node version manager
+cd ~/PharmaChain
 apt-get -y install curl
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
@@ -31,14 +33,13 @@ sudo npm install @babel/runtime@latest
 
 
 #WebPhapp NPM Initialization
-cd ~/build/WebPhapp/WebPhapp/backend
+cd ./WebPhapp/backend
 npm install
-cd ~/build/WebPhapp/WebPhapp/client
+cd ./WebPhapp/client
 npm install
-
+cd ../../quorum-maker
 
 #Quorum Maker Setup
-cd ~/build/quorum-maker
 ./setup.sh &
 
 
