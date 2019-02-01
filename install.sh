@@ -14,13 +14,13 @@ apt-get -y update
 apt-get -y install ethereum
 
 #Node version manager
-#apt-get -y install curl
-#curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-#nvm install 10.0
-#nvm use 10.0
+apt-get -y install curl
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+nvm install 10.0
+nvm use 10.0
 
 #npm install. This part is currently buggy, and produces warnings.
 #TODO: fix npm/node install issues
