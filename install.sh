@@ -27,10 +27,15 @@ nvm use 10.0
 #apt-get -y install npm
 #curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 #apt-get install -y nodejs
-sudo npm install truffle -g --allow-root
-sudo npm install web3@1.0.0-beta.37 --allow-root --unsafe-perm=true
-sudo npm install @babel/runtime@latest
+npm install truffle -g --allow-root
+npm install web3@1.0.0-beta.37 --allow-root --unsafe-perm=true
+npm install @babel/runtime@latest
 
+cd ~/build
+echo "In top level directory"
+pwd
+echo "Repos:" 
+ls
 
 #WebPhapp NPM Initialization
 cd ~/build/WebPhapp/WebPhapp/backend
