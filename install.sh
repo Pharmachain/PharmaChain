@@ -3,14 +3,13 @@ cd ~
 apt-get -y install git
 
 #Pharmachain GitHub Pulls
-git init
 git clone https://github.com/Pharmachain/quorum-maker
 git clone https://github.com/Pharmachain/PharmaChain
 git clone https://github.com/Pharmachain/WebPhapp
 cd ~
 #Docker, required for quorum maker
-apt-get -y install docker.io
 apt-get -y install docker-compose
+apt-get -y install docker.io
 
 #Ethereum Base Layer
 apt-add-repository -y ppa:ethereum/ethereum
@@ -29,18 +28,18 @@ nvm use 10.0
 
 #npm install. This part is currently buggy, and produces warnings.
 #TODO: fix npm/node install issues
-apt-get -y install npm
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-apt-get install -y nodejs
+#apt-get -y install npm
+#curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+#apt-get install -y nodejs
 sudo npm install truffle -g --allow-root
 sudo npm install web3@1.0.0-beta.37 --allow-root --unsafe-perm=true
 sudo npm install @babel/runtime@latest
 
 
 #WebPhapp NPM Initialization
-cd ~/WebPhapp/WebPhapp/backend
+cd ./WebPhapp/backend
 npm install
-cd ~/WebPhapp/WebPhapp/client
+cd ./WebPhapp/client
 npm install
 cd ~/quorum-maker
 
