@@ -38,10 +38,10 @@ echo "Repos:"
 ls
 
 #WebPhapp NPM Initialization
-cd ~/build/WebPhapp/WebPhapp/backend
-npm install
-cd ~/build/WebPhapp/WebPhapp/client
-npm install
+#cd ~/build/WebPhapp/WebPhapp/backend
+#npm install
+#cd ~/build/WebPhapp/WebPhapp/client
+#npm install
 
 
 #Quorum Maker Setup
