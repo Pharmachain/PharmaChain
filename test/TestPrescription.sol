@@ -1,4 +1,4 @@
-pragma experimental ABIEncoderV2;
+pragma solidity ^0.5.0;
 
 
 import "truffle/Assert.sol";
@@ -9,7 +9,7 @@ import "../contracts/Patient.sol";
 
 //Truffle Test Docs for Errors: https://truffleframework.com/tutorials/testing-for-throws-in-solidity-tests
 
-contract TestPatient is PrescriptionBase{
+contract TestPrescription is PrescriptionBase{
     
     Patient p = Patient(DeployedAddresses.Patient());
 
@@ -54,9 +54,9 @@ contract TestPatient is PrescriptionBase{
     
     // Tests the results of an improper access for a prescription. 
     function testImproperChainIndexCheck() public {
-        bool result = DeployedAddresses.Patient().call(bytes4(bytes32(keccak256("getPatientPrescription(2)"))));
+        (bool result, bytes memory r_data) = DeployedAddresses.Patient().call(abi.encodeWithSignature("getPatientPrescription(2)"));
         Assert.isFalse(result, "Failed to get prescription 2.");
-        result = DeployedAddresses.Patient().call(bytes4(bytes32(keccak256("getPatientPrescription(0)"))));
+        (result, r_data) = DeployedAddresses.Patient().call(abi.encodeWithSignature("getPatientPrescription(0)"));
         Assert.isFalse(result, "Failed to get prescription 0.");
     }
 }
