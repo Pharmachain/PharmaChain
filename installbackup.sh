@@ -27,7 +27,7 @@ nvm use 10.0
 apt-get -y install npm
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 apt-get install -y nodejs
-sudo npm install truffle -g --allow-root
+sudo npm install truffle@4.1.14 -g --allow-root
 sudo npm install web3@1.0.0-beta.37 --allow-root --unsafe-perm=true
 sudo npm install @babel/runtime@latest
 

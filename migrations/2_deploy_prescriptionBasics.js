@@ -1,6 +1,6 @@
-PrescriptionData = artifacts.require("PrescriptionData");
-PrescriptionBase = artifacts.require("PrescriptionBase");
-PrescriptionAccessControl = artifacts.require("PrescriptionAccessControl")
+PrescriptionData = artifacts.require("./PrescriptionData.sol");
+PrescriptionBase = artifacts.require("./PrescriptionBase.sol");
+PrescriptionAccessControl = artifacts.require("./PrescriptionAccessControl.sol")
 
 module.exports = function(deployer){
     deployer.deploy(PrescriptionBase, {gas: 5000000});

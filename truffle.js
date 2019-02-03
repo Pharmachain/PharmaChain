@@ -24,5 +24,10 @@ module.exports = {
 			gas: 999999909
 			
 		}
+	},
+	compilers: {
+		solc: {
+			version: "0.4.25"
+		}
 	}
 };
