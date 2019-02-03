@@ -33,10 +33,10 @@ sudo npm install @babel/runtime@latest
 
 
 #WebPhapp NPM Initialization
-cd ~/WebPhapp/WebPhapp/backend
-npm install
-cd ~/WebPhapp/WebPhapp/client
-npm install
+#cd ~/WebPhapp/WebPhapp/backend
+#npm install
+#cd ~/WebPhapp/WebPhapp/client
+#npm install
 
 #Quorum Maker Setup
 cd ~/quorum-maker
