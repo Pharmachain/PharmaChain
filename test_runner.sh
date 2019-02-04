@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-cd ~/build/quorum-maker/TestNetowrk
+cd ~/build/quorum-maker/TestNetwork
 
 # Turn on the Quorum Network  
 sudo docker-compose up -d
@@ -10,5 +10,5 @@ sleep 5m
 ./modular.sh
 # Open the nodes 
 
-cd ~/build/PharmaChain
+cd ~/build/Pharmachain
 truffle test 

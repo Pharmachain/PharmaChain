@@ -47,6 +47,6 @@ ls
 #Quorum Maker Setup
 cd ~/build/quorum-maker
 ./setup.sh &
-cd ~/build/PharmaChain
+cd ~/build/Pharmachain
 
 

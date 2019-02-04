@@ -13,5 +13,5 @@ before_script:
   - sudo chmod +x install.sh
 script: 
   - sudo ./install.sh
-  - cd ~/build/PharmaChain
+  - cd ~/build/Pharmachain
   - sudo ./test_runner.sh	
