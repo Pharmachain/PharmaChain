@@ -14,7 +14,6 @@ before_script:
 script: 
   - sudo ./install.sh
   - cd ~/build/Pharmachain
-  - echo "Present Directory: "
   - ls
   - pwd
   - sudo git checkout SetupScriptBranch
