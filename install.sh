@@ -37,6 +37,12 @@ pwd
 echo "Repos:" 
 ls
 
+echo "Viewing global npm repository"
+npm list -g --depth=0
+echo "Viewing local npm repository"
+npm list --depth=0
+
+
 #WebPhapp NPM Initialization
 #cd ~/build/WebPhapp/WebPhapp/backend
 #npm install
