@@ -24,7 +24,7 @@ nvm use 10.0
 
 #npm install. This part is currently buggy, and produces warnings.
 #TODO: fix npm/node install issues
-#apt-get -y install npm
+apt-get -y install npm
 #curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 #apt-get install -y nodejs
 npm install truffle@4.1.14 -g --allow-root
