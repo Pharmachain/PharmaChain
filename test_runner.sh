@@ -10,5 +10,5 @@ sleep 5m
 ./modular.sh
 # Open the nodes 
 
-cd ~/build/Pharmachain
+cd ~/build/Pharmachain/PharmaChain
 truffle test 
