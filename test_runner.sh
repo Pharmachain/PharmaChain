@@ -11,4 +11,5 @@ sleep 5m
 # Open the nodes 
 
 cd ~/build/Pharmachain/PharmaChain
-truffle test 
+sudo truffle version
+sudo truffle test 
