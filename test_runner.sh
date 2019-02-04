@@ -1,28 +1,14 @@
 #!/bin/bash
-sudo apt-get update
-sudo apt-get install ethereum
-
-cd ..
-sudo git clone https://github.com/Pharmachain/quorum-maker
-echo "Clone into quroum-maker"
-cd quorum-maker
-echo "Move into quroum-maker"
-cd TestNetwork
+set -e
+cd ~/build/quorum-maker/TestNetowrk
 
 # Turn on the Quorum Network  
 sudo docker-compose up -d
-ls /node1/node/qdata
-sleep 2m
+sleep 5m
 
-ls /node1/node/qdata
 # Open the nodes up to be used
 ./modular.sh
 # Open the nodes 
 
-cd ../..
-cd PharmaChain/
-
-
-npm install
+cd ~/build/PharmaChain
 truffle test 
-exit $?
