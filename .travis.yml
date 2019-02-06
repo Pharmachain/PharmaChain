@@ -13,8 +13,4 @@ before_script:
   - sudo chmod +x install.sh
 script: 
   - sudo ./install.sh
-  - cd ~/build/Pharmachain/PharmaChain
-  - ls
-  - pwd
-  - sudo git checkout SetupScriptBranch
   - sudo ./test_runner.sh	
