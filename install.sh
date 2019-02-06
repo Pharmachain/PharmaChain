@@ -15,18 +15,18 @@ apt-get -y install ethereum
 
 #Node version manager
 apt-get -y install curl
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-nvm install 10.0
-nvm use 10.0
+#curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+#nvm install 10.0
+#nvm use 10.0
 
 #npm install. This part is currently buggy, and produces warnings.
 #TODO: fix npm/node install issues
 #apt-get -y install npm
-#curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-#apt-get install -y nodejs
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+apt-get install -y nodejs
 cd ~/build/Pharmachain
 apt-get -y install npm
 npm install truffle@4.1.14 -g --allow-root
