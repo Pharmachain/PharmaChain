@@ -29,7 +29,7 @@ nvm use 10.0
 #apt-get install -y nodejs
 cd ~/build/Pharmachain/PharmaChain
 sudo apt-get -y install npm
-sudo npm install truffle@4.1.14 -g --allow-root
+sudo npm install truffle@4.1.14 --allow-root
 sudo npm install web3@1.0.0-beta.37 --allow-root --unsafe-perm=true
 sudo npm install @babel/runtime@latest
 
