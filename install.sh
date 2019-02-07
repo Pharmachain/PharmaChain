@@ -44,11 +44,11 @@ echo "In Pharmachain, directories: "
 ls
 
 echo "Viewing global npm repository"
-npm list -g --depth=0
+sudo npm list -g --depth=0
 echo "Viewing local npm repository"
-npm list --depth=0
+sudo npm list --depth=0
 
-truffle version
+sudo truffle version
 
 #WebPhapp NPM Initialization
 #cd ~/build/WebPhapp/WebPhapp/backend
