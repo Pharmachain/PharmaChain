@@ -31,6 +31,7 @@ cd ~/build/Pharmachain/PharmaChain
 apt-get -y install npm
 npm install truffle@4.1.14 --allow-root
 alias truffle=~/build/Pharmachain/PharmaChain/nodemodules/.bin/truffle
+sudo alias truffle=~/build/Pharmachain/PharmaChain/nodemules/.bin/truffle
 npm install web3@1.0.0-beta.37 --allow-root --unsafe-perm=true
 npm install @babel/runtime@latest
 
