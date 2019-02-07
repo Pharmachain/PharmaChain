@@ -28,10 +28,10 @@ nvm use 10.0
 #curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 #apt-get install -y nodejs
 cd ~/build/Pharmachain/PharmaChain
-sudo apt-get -y install npm
-sudo npm install truffle@4.1.14 --allow-root
-sudo npm install web3@1.0.0-beta.37 --allow-root --unsafe-perm=true
-sudo npm install @babel/runtime@latest
+apt-get -y install npm
+npm install truffle@4.1.14 --allow-root
+npm install web3@1.0.0-beta.37 --allow-root --unsafe-perm=true
+npm install @babel/runtime@latest
 
 cd ~/build
 echo "In top level directory"
@@ -44,9 +44,9 @@ echo "In Pharmachain, directories: "
 ls
 
 echo "Viewing global npm repository"
-sudo npm list -g --depth=0
+npm list -g --depth=0
 echo "Viewing local npm repository"
-sudo npm list --depth=0
+npm list --depth=0
 
 sudo truffle version
 
