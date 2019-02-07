@@ -27,7 +27,7 @@ nvm use 10.0
 #apt-get -y install npm
 #curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 #apt-get install -y nodejs
-cd ~/build/Pharmachain
+cd ~/build/Pharmachain/PharmaChain
 sudo apt-get -y install npm
 sudo npm install truffle@4.1.14 -g --allow-root
 sudo npm install web3@1.0.0-beta.37 --allow-root --unsafe-perm=true
@@ -39,7 +39,7 @@ pwd
 echo "Repos:"
 ls
 
-cd ~/build/Pharmachain
+cd ~/build/Pharmachain/PharmaChain
 echo "In Pharmachain, directories: "
 ls
 
@@ -48,6 +48,7 @@ npm list -g --depth=0
 echo "Viewing local npm repository"
 npm list --depth=0
 
+truffle version
 
 #WebPhapp NPM Initialization
 #cd ~/build/WebPhapp/WebPhapp/backend
