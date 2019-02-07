@@ -25,14 +25,23 @@ nvm use 10.0
 #npm install. This part is currently buggy, and produces warnings.
 #TODO: fix npm/node install issues
 #apt-get -y install npm
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-apt-get install -y nodejs
+#curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+#apt-get install -y nodejs
 cd ~/build/Pharmachain
 sudo apt-get -y install npm
 sudo npm install truffle@4.1.14 -g --allow-root
 sudo npm install web3@1.0.0-beta.37 --allow-root --unsafe-perm=true
 sudo npm install @babel/runtime@latest
 
+cd ~/build
+echo "In top level directory"
+pwd
+echo "Repos:"
+ls
+
+cd ~/build/Pharmachain
+echo "In Pharmachain, directories: "
+ls
 
 echo "Viewing global npm repository"
 npm list -g --depth=0
