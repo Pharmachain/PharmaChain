@@ -51,17 +51,9 @@ echo "Viewing local npm repository"
 npm list --depth=0
 
 
-
-#WebPhapp NPM Initialization
-#cd ~/build/WebPhapp/WebPhapp/backend
-#npm install
-#cd ~/build/WebPhapp/WebPhapp/client
-#npm install
-
-
 #Quorum Maker Setup
-#cd ~/build/quorum-maker
-#./setup.sh &
-#cd ~/build/Pharmachain
+cd ~/build/quorum-maker
+./setup.sh &
+cd ~/build/Pharmachain
 
 

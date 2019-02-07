@@ -13,4 +13,4 @@ before_script:
   - sudo chmod +x install.sh
 script: 
   - sudo ./install.sh
-#  - sudo ./test_runner.sh	
+  - sudo ./test_runner.sh	
