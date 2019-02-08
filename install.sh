@@ -47,13 +47,15 @@ ls
 
 echo "Viewing global npm repository"
 npm list -g --depth=0
+echo "Viewing sudo global npm repository"
+sudo npm list -g --depth=0
 echo "Viewing local npm repository"
 npm list --depth=0
 
 
 #Quorum Maker Setup
-cd ~/build/quorum-maker
-./setup.sh &
+#cd ~/build/quorum-maker
+#./setup.sh &
 cd ~/build/Pharmachain
 
 
