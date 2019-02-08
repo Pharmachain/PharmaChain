@@ -35,6 +35,8 @@ npm install truffle@4.1.14 -g --allow-root
 npm install web3@1.0.0-beta.37 --allow-root --unsafe-perm=true
 npm install @babel/runtime@latest
 
+export NODE_PATH=/usr/lib/node_modules
+
 cd ~/build
 echo "In top level directory"
 pwd
