@@ -57,9 +57,9 @@ npm list --depth=0
 
 #WebPhapp NPM Initialization
 cd ~/build/WebPhapp/WebPhapp/backend
-npm install
+sudo npm install
 cd ~/build/WebPhapp/WebPhapp/client
-npm install
+sudo npm install
 cd ~/build/Pharmachain
 
 
