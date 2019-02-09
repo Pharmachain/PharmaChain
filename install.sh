@@ -4,9 +4,6 @@ cd ~/build
 git clone https://github.com/Pharmachain/quorum-maker
 #git clone https://github.com/Pharmachain/PharmaChain
 git clone https://github.com/Pharmachain/WebPhapp
-#Docker, required for quorum maker
-#apt-get -y install docker-compose
-#apt-get -y install docker.io
 
 #Ethereum Base Layer
 apt-add-repository -y ppa:ethereum/ethereum

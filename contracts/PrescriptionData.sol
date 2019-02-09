@@ -8,40 +8,7 @@ contract PrescriptionData is PrescriptionBase {
     
     Prescription[] public drugChain;
 
-    /*
-    Get a single prescription.
-    Args:
-        uint(chainIndex): The index of the drugChain;
-    */
-    /*
-    function getPrescription(uint chainIndex) public view returns (
-        uint256 patientID,
-        uint128 prescriberID,
-        uint128 dispenserID,
-        uint64 drugID,
-        string drugQuantity, 
-        uint64[] fullfillmentDates,
-        uint64 dateWritten,  
-        uint16 daysValid,
-        uint8[] refillsLeft,
-        bool isCancelled, 
-        uint64 cancelDate
-    ){
-        Prescription memory patient = drugChain[chainIndex];
-        patientID = patient.patientID;
-        prescriberID = patient.prescriberID;
-        dispenserID = patient.dispenserID;
-        drugID = patient.drugID;
-        drugQuantity = patient.drugQuantity;
-        fullfillmentDates = patient.fullfillmentDates;
-        dateWritten = patient.dateWritten;
-        daysValid = patient.daysValid;
-        refillsLeft = patient.refillsLeft;
-        isCancelled = patient.isCancelled;
-        cancelDate = patient.cancelDate;
-    }*/
-//Fullfilment date and refill left removed
-    function getPrescription(uint chainIndex) public view returns (uint256, uint128, uint128, uint64, string memory, uint64[16] memory, uint64, uint16, uint8, bool, uint64){
+    function getPrescription(uint chainIndex) public view returns (uint256, uint128, uint128, uint64, string, uint64[16], uint64, uint16, uint8, bool, uint64){
         Prescription memory p = drugChain[chainIndex];
         return (p.patientID, p.prescriberID, p.dispenserID, p.drugID, p.drugQuantity,
         p.fulfillmentDates, p.dateWritten, p.daysValid, p.refillsLeft, p.isCancelled, p.cancelDate);
@@ -51,12 +18,20 @@ contract PrescriptionData is PrescriptionBase {
         return drugChain.length;
     }
     
-    /*
-    */
+    function updatePrescription(uint chainIndex, uint128 dispenserID,string drugQuantity, uint64[16] fulfillmentDates, 
+            uint16 daysValid, bool isCancelled, uint64 cancelDate) public returns(uint) {
+        Prescription updated_p = drugChain[chainIndex];
+        updated_p.dispenserID = dispenserID;
+        updated_p.drugQuantity = drugQuantity;
+        updated_p.fulfillmentDates = fulfillmentDates;
+        updated_p.daysValid = daysValid;
+        updated_p.isCancelled = isCancelled;
+        updated_p.cancelDate = cancelDate;
 
-        //uint64[] fullfillmentDates,
-        //uint8[] refillsLeft,
-    function addPrescription(
+        return 0;
+
+    }
+     function addPrescription(
         uint256 patientID,
         uint128 prescriberID,
         uint128 dispenserID,
@@ -68,15 +43,10 @@ contract PrescriptionData is PrescriptionBase {
         uint8 refillsLeft,
         bool isCancelled, 
         uint64 cancelDate) public returns (uint) {
-        //drugChain.push((patientID,prescriberID,dispenserID,drugID,drugQuantity,dateWritten,daysValid,isCancelled,cancelDate));
-        /*fullfillmentDates,*/
         Prescription memory p = Prescription(patientID,prescriberID,dispenserID,drugID,drugQuantity,
         fulfillmentDates,dateWritten, daysValid, refillsLeft, isCancelled, cancelDate);
 
         drugChain.push(p);
         return drugChain.length -1;
-
-
     }
-
 }
