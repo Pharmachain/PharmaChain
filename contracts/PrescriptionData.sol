@@ -18,7 +18,7 @@ contract PrescriptionData is PrescriptionBase {
     function getDrugChainLength() public view returns (uint) {
         return drugChain.length;
     }
-    
+
     function updatePrescription(uint chainIndex, uint128 dispenserID,string drugQuantity, uint64[16] fulfillmentDates, 
             uint16 daysValid, bool isCancelled, uint64 cancelDate) public returns(uint) {
         Prescription updated_p = drugChain[chainIndex];
@@ -32,6 +32,21 @@ contract PrescriptionData is PrescriptionBase {
         return 0;
 
     }
+
+    function cancelPrescription (uint chainIndex) public returns(uint){
+            //Prescription cancel_p = drugChain[chainIndex];
+            drugChain[chainIndex].isCancelled = True;
+            
+    
+
+            if(!drugChain[chainIndex]){
+                //no cancelation, reset to default
+                drugChain.push(cancel_p);
+            }
+            return 0;
+    }
+
+
      function addPrescription(
         uint256 patientID,
         uint128 prescriberID,
@@ -52,6 +67,13 @@ contract PrescriptionData is PrescriptionBase {
         drugChain.push(p);
         return drugChain.length -1;
 
-
     }
+
+    function redeemPrescription (uint chainIndex, uint128 dispenserID,string drugQuantity, uint64[16] fulfillmentDates, 
+            uint16 daysValid, uint8 refillsLeft, bool isCancelled, uint64 cancelDate) public returns(uint){
+             refillsLeft rl;
+             rl--;
+            
+            return 0;
+            }
 }
